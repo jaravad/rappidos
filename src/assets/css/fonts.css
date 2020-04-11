@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'cooper_hewitt';
+  src: url('../fonts/cooperhewitt-bold-webfont.woff2') format('woff2'),
+    url('../fonts/cooperhewitt-bold-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'cooper_hewitt';
+  src: url('../fonts/cooperhewitt-light-webfont.woff2') format('woff2'),
+    url('../fonts/cooperhewitt-light-webfont.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'cooper_hewitt';
+  src: url('../fonts/cooperhewitt-book-webfont.woff2') format('woff2'),
+    url('../fonts/cooperhewitt-book-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'cooper_hewitt';
+  src: url('../fonts/cooperhewitt-semibold-webfont.woff2') format('woff2'),
+    url('../fonts/cooperhewitt-semibold-webfont.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
