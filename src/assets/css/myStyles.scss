@@ -3,9 +3,11 @@ $color-2: #ffd3be;
 $color-3: #f95265;
 $color-4: #bd3444;
 $color-5: #532a59;
+$text-color: #1a202c;
 
 body {
   font-family: 'manrope';
+  color: $text-color;
 }
 
 .navbar {

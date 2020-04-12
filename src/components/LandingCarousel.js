@@ -38,7 +38,7 @@ function LandingCarousel() {
   });
 
   return (
-    <section className="w-4/5 mx-auto">
+    <section className="w-11/12 md:w-4/5 mx-auto">
       <Carousel className="w-full my-8" centered infinite arrows>
         {cards}
       </Carousel>
