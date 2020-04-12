@@ -10,13 +10,14 @@ function Hero() {
         <div className="w-full md:w-1/2 flex justify-center  items-center">
           <img className="w-3/4" src={heroImg} alt="Food" />
         </div>
-        <div className="pt-16 mb-10 md:mb-0 pl-14 md:pl-5 md:pt-0 w-full md:w-1/2 flex flex-col justify-center  text-gray-800">
+        <div className="pt-16 mb-10 md:mb-0 pl-12 md:pl-5 md:pt-0 w-full md:w-1/2 flex flex-col justify-center text-gray-800">
           <div className="w-4/5">
             <h1 className="text-5xl font-normal leading-tight mb-4">
               Tu hambre de crecer está en <strong>RAPPIdos</strong>
             </h1>
-            <p className="text-xl">
-              Únete a nuestra comunidad de restaurantes y crece con nosotros
+            <p className="text-xl leading-tight">
+              Únete hoy a nuestra comunidad de restaurantes. Ayudarte a crecer
+              como empresa es uno de nuestro principales objetivos.
             </p>
           </div>
         </div>
