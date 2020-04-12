@@ -20,7 +20,3 @@ function CarouselCard(props) {
   );
 }
 export default CarouselCard;
-
-{
-  /*  */
-}

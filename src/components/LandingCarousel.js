@@ -1,6 +1,7 @@
 import React from 'react';
 import Carousel, { Dots } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
+// images
 import customers from '../assets/images/customers.jpg';
 import food from '../assets/images/food.jpg';
 import admin from '../assets/images/admin.jpg';
@@ -38,8 +39,13 @@ function LandingCarousel() {
   });
 
   return (
-    <section className="w-11/12 md:w-4/5 mx-auto">
-      <Carousel className="w-full my-8" centered infinite arrows>
+    <section className="w-full bg-pink-100">
+      <Carousel
+        className="w-11/12 md:w-4/5 mx-auto py-8"
+        centered
+        infinite
+        arrows
+      >
         {cards}
       </Carousel>
     </section>
