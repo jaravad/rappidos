@@ -1,11 +1,13 @@
 body {
-  font-family: 'cooper_hewitt';
+  font-family: 'manrope';
+}
+
+.navbar {
+  background-color: #532a59;
 }
 
 .hero-section {
-  background-image: url("../images/food-back.png");
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #fee2d5;
+  min-height: 10em;
 }
 /*# sourceMappingURL=myStyles.css.map */
