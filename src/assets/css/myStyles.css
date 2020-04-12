@@ -4,6 +4,7 @@ body {
 
 .navbar {
   background-color: #532a59;
+  z-index: 10;
 }
 
 .hero-section {
