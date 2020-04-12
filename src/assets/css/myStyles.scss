@@ -5,6 +5,10 @@ $color-4: #bd3444;
 $color-5: #532a59;
 $text-color: #1a202c;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'manrope';
   color: $text-color;

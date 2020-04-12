@@ -46,26 +46,14 @@ function NavBar() {
       >
         <div className="text-sm lg:flex-grow">
           <a
-            href="#"
+            href="#how-it-works"
             className="nav-item hidden mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4"
           >
-            Docs
-          </a>
-          <a
-            href="#"
-            className="nav-item hidden mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4"
-          >
-            Examples
-          </a>
-          <a
-            href="#"
-            className="nav-item hidden mt-4 lg:inline-block lg:mt-0 text-white hover:text-white"
-          >
-            Blog
+            Como funciona
           </a>
         </div>
         <a
-          href="#"
+          href="#how-it-works"
           className="nav-item hidden lg:inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
         >
           Download
