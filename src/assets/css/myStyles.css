@@ -8,6 +8,10 @@ body {
 
 .hero-section {
   background-color: #fee2d5;
-  min-height: 10em;
+  min-height: 35em;
+}
+
+.carousel-card {
+  min-height: 25em;
 }
 /*# sourceMappingURL=myStyles.css.map */
