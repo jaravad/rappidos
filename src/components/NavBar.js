@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
   const toggle = () => {
@@ -45,19 +46,19 @@ function NavBar() {
         className="w-full block flex-grow lg:flex lg:items-center lg:w-auto lg:justify-between"
       >
         <div className="text-sm lg:flex-grow">
-          <a
-            href="./#how-it-works"
+          <Link
+            to="/#how-it-works"
             className="nav-item hidden mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4"
           >
             Como funciona
-          </a>
+          </Link>
         </div>
-        <a
-          href="./login"
+        <Link
+          to="/login"
           className="nav-item hidden lg:inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
         >
           Iniciar Sesión
-        </a>
+        </Link>
       </div>
     </nav>
   );

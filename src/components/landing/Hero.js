@@ -1,11 +1,9 @@
 import React from 'react';
 import heroImg from '../../assets/images/hero.svg';
-import NavBar from '../NavBar';
 
 function Hero() {
   return (
     <header>
-      <NavBar></NavBar>
       <main className="hero-section w-full h-auto md:h-screen flex flex-col-reverse md:flex-row items-center bg-gray-100 pt-10">
         <div className="w-full md:w-1/2 mb-8 md:mb-0 flex justify-center items-center">
           <img className="w-3/5 md:w-3/4" src={heroImg} alt="Food" />
