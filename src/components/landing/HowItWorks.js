@@ -1,8 +1,8 @@
 import React from 'react';
 import Card from './Card';
-import clients from '../assets/images/clients.svg';
-import cook from '../assets/images/cook.svg';
-import delivery from '../assets/images/delivery.svg';
+import clients from '../../assets/images/clients.svg';
+import cook from '../../assets/images/cook.svg';
+import delivery from '../../assets/images/delivery.svg';
 const info = [
   {
     title: 'Los clientes hacen un pedido',

@@ -1,6 +1,6 @@
 import React from 'react';
-import heroImg from '../assets/images/hero.svg';
-import NavBar from './NavBar';
+import heroImg from '../../assets/images/hero.svg';
+import NavBar from '../NavBar';
 
 function Hero() {
   return (

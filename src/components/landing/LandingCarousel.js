@@ -3,9 +3,9 @@ import Carousel from '@brainhubeu/react-carousel';
 // import { Dots } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 // images
-import customers from '../assets/images/customers.jpg';
-import food from '../assets/images/food.jpg';
-import admin from '../assets/images/admin.jpg';
+import customers from '../../assets/images/customers.jpg';
+import food from '../../assets/images/food.jpg';
+import admin from '../../assets/images/admin.jpg';
 import CarouselCard from './CarouselCard';
 const info = [
   {
@@ -23,7 +23,7 @@ const info = [
   {
     title: 'Administra todo con facilidad',
     p:
-      'Los pedidos circulan sin problemas con el software para restaurantes de Uber Eats, que brinda opciones de integración flexibles y ofrece soporte cuando lo necesitas.',
+      'Los pedidos circulan sin problemas con el software para restaurantes de RAPPIdos, que brinda opciones de integración flexibles y ofrece soporte cuando lo necesitas.',
     image: admin,
   },
 ];
