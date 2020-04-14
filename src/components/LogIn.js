@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 //international phone codes
 const countryTelData = require('country-telephone-data');
 
@@ -50,7 +51,7 @@ class LogIn extends React.Component {
             <select
               value={this.state.value}
               onChange={this.handleChange}
-              className=" w-full border-solid border border-gray-400 rounded-md h-12 px-2 mb-3"
+              className=" bg-white w-full border-solid border border-gray-400 rounded-md h-12 px-2 mb-3"
               id="countries"
             >
               {options}
@@ -59,7 +60,7 @@ class LogIn extends React.Component {
               Número de teléfono
             </label>
             <input
-              className="block w-full border-solid border border-gray-400 rounded-md h-12 px-2 mb-3 placeholder-gray-600"
+              className="bg-white block w-full border-solid border border-gray-400 rounded-md h-12 px-2 mb-3 placeholder-gray-600"
               type="text"
               id="phone"
               placeholder="Número de teléfono"
@@ -74,8 +75,15 @@ class LogIn extends React.Component {
             <input
               type="submit"
               value="Continúa"
-              className="w-full submit-btn py-3 font-semibold text-white rounded-lg"
+              className="w-full submit-btn py-3 font-bold text-white rounded-lg mb-3"
             />
+
+            <p className="text-xs">
+              No tienes una cuenta?
+              <Link>
+                <strong className="underline ml-1">Regístrate</strong>
+              </Link>
+            </p>
           </form>
         </article>
       </main>
