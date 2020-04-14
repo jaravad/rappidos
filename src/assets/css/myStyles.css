@@ -20,4 +20,8 @@ body {
 .carousel-card {
   min-height: 25em;
 }
+
+.submit-btn {
+  background-color: #f95265;
+}
 /*# sourceMappingURL=myStyles.css.map */

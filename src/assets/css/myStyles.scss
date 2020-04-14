@@ -4,6 +4,7 @@ $color-3: #f95265;
 $color-4: #bd3444;
 $color-5: #532a59;
 $text-color: #1a202c;
+$gray-placeholder: #a0aec0;
 
 html {
   scroll-behavior: smooth;
@@ -26,4 +27,8 @@ body {
 
 .carousel-card {
   min-height: 25em;
+}
+
+.submit-btn {
+  background-color: $color-3;
 }
