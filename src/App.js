@@ -10,6 +10,7 @@ function App() {
       <NavBar></NavBar>
       <Switch>
         <Route path="/" exact component={Landing} />
+        <Route path="/#how-it-works" exact component={LogIn} />
         <Route path="/login" exact component={LogIn} />
       </Switch>
     </Router>
