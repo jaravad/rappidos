@@ -21,6 +21,10 @@ body {
   min-height: 25em;
 }
 
+.food-back {
+  background-image: url("../images/food-back-flip.png");
+}
+
 .submit-btn {
   background-color: #f95265;
 }

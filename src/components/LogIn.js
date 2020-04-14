@@ -1,4 +1,5 @@
 import React from 'react';
+//international phone codes
 const countryTelData = require('country-telephone-data');
 
 function isInputNumber(evt) {
@@ -26,7 +27,6 @@ class LogIn extends React.Component {
     alert('Your favorite flavor is: ' + this.state.value);
     event.preventDefault();
   }
-  //international phone codes
 
   render() {
     const options = countryTelData.allCountries.map((country, key) => {
@@ -37,7 +37,7 @@ class LogIn extends React.Component {
       );
     });
     return (
-      <main className="h-screen w-screen bg-pink-100 flex items-center justify-center">
+      <main className="food-back h-screen w-screen bg-pink-100 flex items-center justify-center bg-cover bg-no-repeat bg-bottom">
         <article className="text-gray-800 w-4/5 md:max-w-sm bg-pink-100 h-auto rounded border border-solid border-gray-400 shadow-md p-8">
           <h1 className="text-xl font-bold  text-center mb-4">Inicia sesión</h1>
           <form className="w-full" action="" onSubmit={this.handleSubmit}>
