@@ -38,8 +38,8 @@ class LogIn extends React.Component {
       );
     });
     return (
-      <main className="food-back h-screen w-screen bg-pink-100 flex items-center justify-center bg-cover bg-no-repeat bg-bottom">
-        <article className="text-gray-800 w-4/5 md:max-w-sm bg-pink-100 h-auto rounded border border-solid border-gray-400 shadow-md p-8">
+      <main className="food-back h-screen w-screen bg-pink-100 bg-cover bg-no-repeat bg-bottom pt-32">
+        <article className="text-gray-800 w-4/5 md:max-w-sm bg-pink-100 h-auto rounded border border-solid border-gray-400 shadow-md p-8 mx-auto">
           <h1 className="text-xl font-bold  text-center mb-4">Inicia sesión</h1>
           <form className="w-full" action="" onSubmit={this.handleSubmit}>
             <label

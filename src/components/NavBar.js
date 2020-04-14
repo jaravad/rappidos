@@ -4,7 +4,7 @@ import { NavHashLink } from 'react-router-hash-link';
 
 function NavBar() {
   const toggle = () => {
-    const navItems = document.querySelectorAll('#menu a');
+    const navItems = document.querySelectorAll('.nav-item');
     navItems.forEach((item) => {
       if (item.classList.contains('block')) {
         item.classList.replace('block', 'hidden');
@@ -25,7 +25,10 @@ function NavBar() {
         >
           <path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z" />
         </svg>
-        <NavLink to="/" className="font-semibold text-xl tracking-tight">
+        <NavLink
+          to="/"
+          className="font-semibold text-xl tracking-tight hover:cursor-auto"
+        >
           RAPPIdos
         </NavLink>
       </div>
@@ -51,6 +54,7 @@ function NavBar() {
         <div className="text-sm lg:flex-grow">
           <NavHashLink
             to="/#how-it-works"
+            onClick={toggle}
             className="nav-item hidden mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4"
           >
             Como funciona
@@ -58,6 +62,7 @@ function NavBar() {
         </div>
         <NavLink
           to="/login"
+          onClick={toggle}
           className="nav-item hidden lg:inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
         >
           Iniciar Sesión
