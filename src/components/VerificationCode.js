@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactCodeInput from 'react-verification-code-input';
 
 class VerificationCode extends React.Component {
   continue = (e) => {
@@ -18,18 +17,6 @@ class VerificationCode extends React.Component {
           <p className="w-full mb-5">
             Ingresa el código que se acaba de enviar a 3183519851:
           </p>
-
-          <ReactCodeInput
-            autoFocus={true}
-            className=""
-            defaultValue={values.code}
-            onChange={handleChange('code')}
-            disabled={false}
-            fieldHeight={54}
-            fieldWidth={58}
-            fields={4}
-            type="number"
-          />
         </article>
       </main>
     );

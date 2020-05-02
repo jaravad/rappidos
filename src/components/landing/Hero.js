@@ -11,7 +11,7 @@ function Hero() {
         <div className="pt-16 mb-10 md:mb-0 pl-12 md:pl-5 md:pt-0 w-full md:w-1/2 flex flex-col justify-center text-gray-800">
           <div className="w-4/5">
             <h1 className="text-5xl font-normal leading-tight mb-4">
-              Tu hambre de crecer está en <strong>RAPPIdos</strong>
+              Tu oportunidad de crecer está en <strong>RAPPIdos</strong>
             </h1>
             <p className="leading-tight">
               Únete hoy a nuestra comunidad de restaurantes. Ayudarte a crecer
