@@ -55,7 +55,7 @@ function NavBar() {
           <NavHashLink
             to="/#how-it-works"
             onClick={toggle}
-            className="nav-item hidden mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4"
+            className="nav-item hidden mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4 font-semibold"
           >
             Como funciona
           </NavHashLink>
@@ -63,7 +63,7 @@ function NavBar() {
         <NavLink
           to="/login"
           onClick={toggle}
-          className="nav-item hidden lg:inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
+          className="nav-item hidden lg:inline-block text-sm px-4 py-2 leading-none rounded text-white font-semibold border-white border hover:border-transparent hover:text-purple-800 hover:bg-white mt-4 lg:mt-0"
         >
           Iniciar Sesión
         </NavLink>

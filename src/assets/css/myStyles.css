@@ -29,4 +29,8 @@ body {
 .submit-btn {
   background-color: #f95265;
 }
+
+.pincode-input-container {
+  display: inline-block;
+}
 /*# sourceMappingURL=myStyles.css.map */
