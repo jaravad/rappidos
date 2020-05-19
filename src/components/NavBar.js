@@ -4,14 +4,13 @@ import { NavHashLink } from 'react-router-hash-link';
 
 function NavBar() {
   const toggle = () => {
-    const navItems = document.querySelectorAll('.nav-item');
-    navItems.forEach((item) => {
-      if (item.classList.contains('block')) {
-        item.classList.replace('block', 'hidden');
-      } else {
-        item.classList.replace('hidden', 'block');
-      }
-    });
+    const menu = document.getElementById('menu');
+
+    if (menu.classList.contains('block')) {
+      menu.classList.replace('block', 'hidden');
+    } else {
+      menu.classList.replace('hidden', 'block');
+    }
   };
   return (
     <nav className="navbar flex items-center justify-between flex-wrap px-6 py-4 fixed w-full shadow-lg">
@@ -34,7 +33,7 @@ function NavBar() {
       </div>
       <div className="block lg:hidden">
         <button
-          className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white"
+          className="flex items-center px-3 py-2 border rounded text-white border-white hover:text-white hover:border-white"
           onClick={toggle}
         >
           <svg
@@ -49,24 +48,33 @@ function NavBar() {
       </div>
       <div
         id="menu"
-        className="w-full block flex-grow lg:flex lg:items-center lg:w-auto lg:justify-between"
+        className="hidden w-full flex-grow lg:flex lg:items-center lg:w-auto lg:justify-between"
       >
-        <div className="text-sm lg:flex-grow">
+        <div className="text-sm lg:flex-grow lg:inline-block mt-2 lg:mt-0 py-2 lg:py-0">
           <NavHashLink
             to="/#how-it-works"
             onClick={toggle}
-            className="nav-item hidden mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4 font-semibold"
+            className="mt-4 text-white hover:text-white font-semibold mx-1"
           >
             Como funciona
           </NavHashLink>
         </div>
-        <NavLink
-          to="/login"
-          onClick={toggle}
-          className="nav-item hidden lg:inline-block text-sm px-4 py-2 leading-none rounded text-white font-semibold border-white border hover:border-transparent hover:text-purple-800 hover:bg-white mt-4 lg:mt-0"
-        >
-          Iniciar Sesión
-        </NavLink>
+        <div className="flex lg:inline-block py-2 lg:py-0">
+          <NavLink
+            to="/login"
+            onClick={toggle}
+            className="text-sm px-4 py-2 leading-none rounded text-white font-semibold border-white border hover:border-transparent hover:text-purple-800 hover:bg-white lg:mt-0 mx-1"
+          >
+            Iniciar Sesión
+          </NavLink>
+          <NavLink
+            to="/signup"
+            onClick={toggle}
+            className="text-sm px-4 py-2 leading-none rounded text-white font-semibold border-white border hover:border-transparent hover:text-purple-800 hover:bg-white lg:mt-0 mx-1"
+          >
+            Regístrate
+          </NavLink>
+        </div>
       </div>
     </nav>
   );
