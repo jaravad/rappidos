@@ -28,13 +28,15 @@ body {
 .hero-section h1 {
   -webkit-animation: text-anim 0.8s ease 1s;
           animation: text-anim 0.8s ease 1s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
 }
 
 .hero-section p {
   -webkit-animation: text-anim 0.8s ease 2s;
           animation: text-anim 0.8s ease 2s;
+}
+
+.hero-section h1,
+.hero-section p {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -50,10 +52,6 @@ body {
 
 .submit-btn {
   background-color: #f95265;
-}
-
-.pincode-input-container {
-  display: inline-block;
 }
 
 @-webkit-keyframes nav-anim {

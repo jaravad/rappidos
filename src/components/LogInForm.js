@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 //international phone codes
 const countryTelData = require('country-telephone-data');
 
-function isInputNumber(evt) {
+export function isInputNumber(evt) {
   const ch = String.fromCharCode(evt.which);
 
   if (!/[0-9]/.test(ch)) {

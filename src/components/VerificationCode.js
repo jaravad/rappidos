@@ -1,5 +1,5 @@
 import React from 'react';
-import PinInput from 'react-pin-input';
+import { isInputNumber } from './LogInForm';
 
 class VerificationCode extends React.Component {
   state = {
@@ -16,9 +16,8 @@ class VerificationCode extends React.Component {
   };
 
   render() {
-    // this should be uncommented
-    // const { values, handleChange } = this.props;
-    const { values } = this.props;
+    const { values, handleChange } = this.props;
+
     console.log(values);
     return (
       <main className="food-back h-screen w-screen bg-pink-100 bg-cover bg-no-repeat bg-bottom pt-32">
@@ -29,16 +28,19 @@ class VerificationCode extends React.Component {
           <p className="w-full mb-5">
             Ingresa el código que se acaba de enviar a {values.phone}:
           </p>
-          <PinInput
-            length={5}
-            focus
-            // disabled
-            className="mx-auto"
-            ref={(p) => (this.pin = p)}
-            type="numeric"
-            onChange={this.onChange}
+          <input
+            className="bg-white block w-4/5 border-solid border border-gray-400 rounded-md h-12 px-2 mb-3 placeholder-gray-600 text-2xl text-center tracking-widest"
+            type="text"
+            id="code"
+            onChange={handleChange('code')}
+            maxLength={6}
+            onKeyPress={isInputNumber}
+            defaultValue={values.code}
+            autoComplete="off"
           />
-          <div>{this.state.value}</div>
+          <div>{`Phone: ${values.phone}`}</div>
+          <div>{`Phone code: ${values.phonecode}`}</div>
+          <div>{`Code: ${values.code}`}</div>
         </article>
       </main>
     );

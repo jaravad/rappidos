@@ -34,11 +34,14 @@ body {
 
   h1 {
     animation: text-anim 0.8s ease 1s;
-    animation-fill-mode: forwards;
   }
 
   p {
     animation: text-anim 0.8s ease 2s;
+  }
+
+  h1,
+  p {
     animation-fill-mode: forwards;
   }
 }
@@ -54,10 +57,6 @@ body {
 
 .submit-btn {
   background-color: $color-3;
-}
-
-.pincode-input-container {
-  display: inline-block;
 }
 
 @keyframes nav-anim {
