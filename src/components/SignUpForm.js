@@ -11,7 +11,7 @@ function isInputNumber(evt) {
   }
 }
 
-class LogInForm extends React.Component {
+class SignUpForm extends React.Component {
   continue = (e) => {
     e.preventDefault();
     this.props.nextStep();
@@ -29,7 +29,7 @@ class LogInForm extends React.Component {
     return (
       <main className="food-back h-screen w-screen bg-pink-100 bg-cover bg-no-repeat bg-bottom pt-32">
         <article className="text-gray-800 w-4/5 md:max-w-sm bg-pink-100 h-auto rounded border border-solid border-gray-400 shadow-md p-8 mx-auto">
-          <h1 className="text-xl font-bold  text-center mb-4">Inicia sesión</h1>
+          <h1 className="text-xl font-bold  text-center mb-4">Regístrate</h1>
           <form className="w-full" action="" onSubmit={this.handleSubmit}>
             <label
               htmlFor="countries"
@@ -71,9 +71,9 @@ class LogInForm extends React.Component {
             />
 
             <p className="text-xs">
-              No tienes una cuenta?
-              <Link to="/signup">
-                <strong className="underline ml-1">Regístrate</strong>
+              Ya tienes cuenta?
+              <Link to="/login">
+                <strong className="underline ml-1">Inicia sesión</strong>
               </Link>
             </p>
           </form>
@@ -83,4 +83,4 @@ class LogInForm extends React.Component {
   }
 }
 
-export default LogInForm;
+export default SignUpForm;
