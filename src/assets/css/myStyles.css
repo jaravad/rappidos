@@ -1,3 +1,4 @@
+/*tailwind colors*/
 html {
   scroll-behavior: smooth;
 }
@@ -10,11 +11,32 @@ body {
 .navbar {
   background-color: #532a59;
   z-index: 10;
+  -webkit-animation: nav-anim 1s ease-in-out;
+          animation: nav-anim 1s ease-in-out;
 }
 
 .hero-section {
   background-color: #fee2d5;
   min-height: 40em;
+}
+
+.hero-section img {
+  -webkit-animation: img-anim 1s ease-out;
+          animation: img-anim 1s ease-out;
+}
+
+.hero-section h1 {
+  -webkit-animation: text-anim 0.8s ease 1s;
+          animation: text-anim 0.8s ease 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.hero-section p {
+  -webkit-animation: text-anim 0.8s ease 2s;
+          animation: text-anim 0.8s ease 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .carousel__card {
@@ -23,7 +45,7 @@ body {
 
 .food-back {
   min-height: 40em;
-  background-image: url("../images/food-back.png");
+  background-image: url(../images/food-back.png);
 }
 
 .submit-btn {
@@ -32,5 +54,65 @@ body {
 
 .pincode-input-container {
   display: inline-block;
+}
+
+@-webkit-keyframes nav-anim {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 0;
+  }
+}
+
+@keyframes nav-anim {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 0;
+  }
+}
+
+@-webkit-keyframes img-anim {
+  from {
+    opacity: 0;
+    top: 100px;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@keyframes img-anim {
+  from {
+    opacity: 0;
+    top: 100px;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@-webkit-keyframes text-anim {
+  from {
+    left: 100px;
+  }
+  to {
+    color: #2d3748;
+    left: 0;
+  }
+}
+
+@keyframes text-anim {
+  from {
+    left: 100px;
+  }
+  to {
+    color: #2d3748;
+    left: 0;
+  }
 }
 /*# sourceMappingURL=myStyles.css.map */
