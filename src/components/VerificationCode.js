@@ -16,7 +16,9 @@ class VerificationCode extends React.Component {
   };
 
   render() {
-    const { values, handleChange } = this.props;
+    // this should be uncommented
+    // const { values, handleChange } = this.props;
+    const { values } = this.props;
     console.log(values);
     return (
       <main className="food-back h-screen w-screen bg-pink-100 bg-cover bg-no-repeat bg-bottom pt-32">
