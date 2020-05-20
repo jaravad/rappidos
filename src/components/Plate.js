@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Platillo(props) {
+function Plate(props) {
   return (
     <article className="p-3 w-full md:w-1/2 lg:w-1/3">
       <div className="w-full rounded-md overflow-hidden shadow-md bg-white">
@@ -17,4 +17,4 @@ function Platillo(props) {
     </article>
   );
 }
-export default Platillo;
+export default Plate;
