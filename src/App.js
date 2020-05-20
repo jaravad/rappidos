@@ -4,7 +4,7 @@ import Landing from './components/landing/Landing';
 import LogIn from './components/LogIn';
 import SignUp from './components/SignUp';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Usersesion from './components/Usersesion';
+import Products from './components/Products';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
         <Route path="/#how-it-works" />
         <Route path="/login" component={LogIn} />
         <Route path="/signup" component={SignUp} />
-        <Route path="/sesion" component={Usersesion} />
+        <Route path="/sesion" component={Products} />
         {/* <Route path="/verification" component={VerificationCode}></Route> */}
       </Switch>
     </Router>
