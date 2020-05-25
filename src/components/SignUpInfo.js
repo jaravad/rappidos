@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class SignUpInfo extends React.Component {
   continue = (e) => {
