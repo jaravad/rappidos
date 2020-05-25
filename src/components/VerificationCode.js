@@ -41,6 +41,13 @@ class VerificationCode extends React.Component {
           <div>{`Phone: ${values.phone}`}</div>
           <div>{`Phone code: ${values.phonecode}`}</div>
           <div>{`Code: ${values.code}`}</div>
+
+          <input
+            type="submit"
+            value="Continúa"
+            className="w-full submit-btn py-3 font-bold text-white rounded-lg mb-3"
+            onClick={this.continue}
+          />
         </article>
       </main>
     );

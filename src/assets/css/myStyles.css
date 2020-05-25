@@ -47,6 +47,7 @@ body {
 
 .food-back {
   min-height: 40em;
+  background-attachment: fixed;
   background-image: url(../images/food-back.png);
 }
 

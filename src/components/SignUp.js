@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SignUpForm from './SignUpForm';
 import VerificationCode from './VerificationCode';
+import SignUpInfo from './SignUpInfo';
 
 class SignUp extends Component {
   state = {
@@ -8,6 +9,11 @@ class SignUp extends Component {
     phonecode: '+57',
     phone: '',
     code: '',
+    name: '',
+    address: '',
+    ownerName: '',
+    ownerLastName: '',
+    email: '',
   };
 
   // Proceed to the next step
@@ -46,6 +52,14 @@ class SignUp extends Component {
       case 2:
         return (
           <VerificationCode
+            nextStep={this.nextStep}
+            handleChange={this.handleChange}
+            values={values}
+          />
+        );
+      case 3:
+        return (
+          <SignUpInfo
             nextStep={this.nextStep}
             handleChange={this.handleChange}
             values={values}
