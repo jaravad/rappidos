@@ -45,47 +45,34 @@ class SignUpInfo extends React.Component {
             />
 
             <label
-              htmlFor="ownerName"
+              htmlFor="category"
               className="text-xs block mb-1 font-semibold"
             >
-              Nombre del representante
+              Categoría
             </label>
             <input
               className="bg-white block w-full border-solid border border-gray-400 rounded-md h-12 px-2 mb-3 placeholder-gray-600"
               type="text"
-              id="ownerName"
-              placeholder="Nombre"
-              onChange={handleChange('ownerName')}
-              defaultValue={values.ownerName}
+              id="category"
+              placeholder="Categoría"
+              onChange={handleChange('category')}
+              defaultValue={values.category}
               autoComplete="off"
             />
 
             <label
-              htmlFor="ownerLastName"
+              htmlFor="avgTime"
               className="text-xs block mb-1 font-semibold"
             >
-              Apellido del representante
-            </label>
-            <input
-              className="bg-white block w-full border-solid border border-gray-400 rounded-md h-12 px-2 mb-3 placeholder-gray-600"
-              type="text"
-              id="ownerLastName"
-              placeholder="Apellido"
-              onChange={handleChange('ownerLastName')}
-              defaultValue={values.ownerLastName}
-              autoComplete="off"
-            />
-
-            <label htmlFor="email" className="text-xs block mb-1 font-semibold">
-              Correo electrónico
+              Tiempo promedio
             </label>
             <input
               className="bg-white block w-full border-solid border border-gray-400 rounded-md h-12 px-2 mb-5 placeholder-gray-600"
-              type="email"
-              id="email"
-              placeholder="Correo"
-              onChange={handleChange('email')}
-              defaultValue={values.email}
+              type="text"
+              id="avgTime"
+              placeholder="Tiempo"
+              onChange={handleChange('avgTime')}
+              defaultValue={values.avgTime}
               autoComplete="off"
             />
 

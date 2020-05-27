@@ -1,10 +1,10 @@
 import React from 'react';
 import NavBar from './components/NavBar';
 import Landing from './components/landing/Landing';
-import LogIn from './components/LogIn';
-import SignUp from './components/SignUp';
+import LogIn from './components/login/LogIn';
+import SignUp from './components/signup/SignUp';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import PlatesPage from './components/PlatesPage';
+import PlatesPage from './components/plates/PlatesPage';
 
 function App() {
   return (

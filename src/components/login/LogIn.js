@@ -1,19 +1,15 @@
-import React, { Component } from 'react';
-import SignUpForm from './SignUpForm';
-import VerificationCode from './VerificationCode';
-import SignUpInfo from './SignUpInfo';
+// import FoodBack from './FoodBack';
 
-class SignUp extends Component {
+import React, { Component } from 'react';
+import LogInForm from './LogInForm';
+import VerificationCode from '../VerificationCode';
+
+class LogIn extends Component {
   state = {
     step: 1,
     phonecode: '+57',
     phone: '',
     code: '',
-    name: '',
-    address: '',
-    ownerName: '',
-    ownerLastName: '',
-    email: '',
   };
 
   // Proceed to the next step
@@ -42,7 +38,7 @@ class SignUp extends Component {
     switch (step) {
       case 1:
         return (
-          <SignUpForm
+          <LogInForm
             nextStep={this.nextStep}
             handleChange={this.handleChange}
             values={values}
@@ -57,17 +53,9 @@ class SignUp extends Component {
             values={values}
           />
         );
-      case 3:
-        return (
-          <SignUpInfo
-            nextStep={this.nextStep}
-            handleChange={this.handleChange}
-            values={values}
-          />
-        );
       default:
         return (
-          <SignUpForm
+          <LogInForm
             nextStep={this.nextStep}
             handleChange={this.handleChange}
             values={values}
@@ -77,4 +65,4 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp;
+export default LogIn;

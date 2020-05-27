@@ -1,5 +1,5 @@
 import React from 'react';
-import { isInputNumber } from './LogInForm';
+import { isInputNumber } from './login/LogInForm';
 
 class VerificationCode extends React.Component {
   state = {

@@ -1,7 +1,7 @@
 import React from 'react';
 import Plate from './Plate';
-import image from '../assets/images/mittagessen.jpg';
-import banner from '../assets/images/banner.jpg';
+import image from '../../assets/images/mittagessen.jpg';
+import banner from '../../assets/images/banner.jpg';
 function PlatesPage() {
   return (
     <div>
@@ -10,11 +10,11 @@ function PlatesPage() {
         <h2 className="text-2xl font-bold pl-3">Plates</h2>
         <div className="flex flex-wrap">
           <Plate title={'Spaguetti'} p={'Disfrutalo'} img={image} key={1} />
+          {/* <Plate title={'Spaguetti'} p={'Disfrutalo'} img={image} key={1} />
           <Plate title={'Spaguetti'} p={'Disfrutalo'} img={image} key={1} />
           <Plate title={'Spaguetti'} p={'Disfrutalo'} img={image} key={1} />
           <Plate title={'Spaguetti'} p={'Disfrutalo'} img={image} key={1} />
-          <Plate title={'Spaguetti'} p={'Disfrutalo'} img={image} key={1} />
-          <Plate title={'Spaguetti'} p={'Disfrutalo'} img={image} key={1} />
+          <Plate title={'Spaguetti'} p={'Disfrutalo'} img={image} key={1} /> */}
         </div>
       </div>
     </div>
