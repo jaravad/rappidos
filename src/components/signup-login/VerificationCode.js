@@ -6,8 +6,8 @@ class VerificationCode extends React.Component {
     value: "",
   };
 
-  handle = () => {
-
+  handler = () => {
+    
   };
 
   onChange = (value) => {

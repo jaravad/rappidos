@@ -1,25 +1,26 @@
-import React, { Component } from 'react';
-import PhoneForm from './PhoneForm';
-import VerificationCode from './VerificationCode';
+import React, { Component } from "react";
+import PhoneForm from "./PhoneForm";
+import VerificationCode from "./VerificationCode";
 // import SignUpInfo from './SignUpInfo';
 
 class SignupLogin extends Component {
   state = {
     step: 1,
-    phonecode: '+57',
-    phone: '',
-    code: '',
-    name: '',
-    category: '',
-    address: '',
-    avgTime: '',
+    nuevo: null,
+    phonecode: "+57",
+    phone: "",
+    code: "",
+    name: "",
+    category: "",
+    address: "",
+    avgTime: "",
   };
 
   // Proceed to the next step
 
-  nextStep = () => {
+  nextStep = (nuevo) => {
     const { step } = this.state;
-    this.setState({ step: step + 1 });
+    this.setState({ step: step + 1, nuevo: nuevo });
   };
 
   // Go back to prev step

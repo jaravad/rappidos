@@ -1,6 +1,7 @@
 import React from "react";
 import api from "../../api";
 import "../../assets/css/spinner.css";
+import { Redirect } from "react-router-dom";
 //international phone codes
 const countryTelData = require("country-telephone-data");
 
@@ -18,9 +19,9 @@ class PhoneForm extends React.Component {
   };
   continue = async (phone) => {
     this.setState({ loading: true });
-    await api.pedirCodigo(phone);
+    let r = await api.pedirCodigo(phone);
     this.setState({ loading: false });
-    this.props.nextStep();
+    this.props.nextStep(r.body.nuevo);
   };
 
   render() {

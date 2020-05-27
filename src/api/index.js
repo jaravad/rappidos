@@ -17,7 +17,28 @@ class Api {
         requestOptions
       );
       let response = await query.json();
-      console.log(response);
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  async verificarCodigo(telefono) {
+    try {
+      let requestOptions = {
+        method: "POST",
+        redirect: "follow",
+        mode: "cors",
+        body: JSON.stringify({
+          telefono,
+        }),
+        headers: { "Content-Type": "application/json" },
+      };
+      let query = await fetch(
+        `${Base_api}api/restaurant/mandarCodigo`,
+        requestOptions
+      );
+      let response = await query.json();
+      return response;
     } catch (error) {
       console.log(error);
     }
