@@ -1,0 +1,10 @@
+.not-found {
+  padding-left: 10px;
+}
+
+.not-found h1 {
+  color: red;
+  font-size: 40px;
+  font-family: "abibasmedium", sans-serif;
+  font-weight: bold;
+}
