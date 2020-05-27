@@ -12,7 +12,7 @@ function Hero() {
             alt="Food"
           />
         </div>
-        <div className="pt-16 mb-10 md:mb-0 pl-12 md:pl-5 md:pt-0 w-full md:w-1/2 flex flex-col justify-center text-transparent">
+        <div className="pt-16 mb-10 md:mb-0 pl-12 md:pl-5 md:pt-0 w-full md:w-1/2 flex flex-col justify-center">
           <div className="w-4/5 relative text-gray-800 right-to-left-anim">
             <h1 className="text-5xl font-normal leading-tight mb-4">
               Tu oportunidad de crecer está en <strong>RAPPIdos</strong>

@@ -107,6 +107,12 @@ body {
 /*===============================*/
 .submit-btn {
   background-color: #f95265;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #f72139;
 }
 
 .plates-section {

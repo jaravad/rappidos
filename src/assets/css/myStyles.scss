@@ -94,6 +94,11 @@ body {
 
 .submit-btn {
   background-color: $color-3;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: darken($color: $color-3, $amount: 10%);
 }
 
 .plates-section {

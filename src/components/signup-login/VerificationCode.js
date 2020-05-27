@@ -52,7 +52,7 @@ class VerificationCode extends React.Component {
                   Ingresa el código que se acaba de enviar a {values.phone}:
                 </p>
                 <input
-                  className="bg-white block w-4/5 border-solid border border-gray-400 rounded-md h-12 px-2 mb-3 placeholder-gray-600 text-2xl text-center tracking-widest"
+                  className="bg-white block w-full border-solid border border-gray-400 rounded-md h-12 px-2 mb-3 placeholder-gray-600 text-2xl text-center tracking-widest mb-8"
                   type="text"
                   id="code"
                   onChange={handleChange('code')}
@@ -62,14 +62,11 @@ class VerificationCode extends React.Component {
                   autoComplete="off"
                   required
                 />
-                <div>{`Phone: ${values.phone}`}</div>
-                <div>{`Phone code: ${values.phonecode}`}</div>
-                <div>{`Code: ${values.code}`}</div>
 
                 <input
                   type="submit"
                   value="Continúa"
-                  className="w-full submit-btn py-3 font-bold text-white rounded-lg mb-3"
+                  className="w-full submit-btn py-3 font-bold text-white rounded-lg mb-3 cursor-pointer"
                   onClick={() =>
                     this.handler(
                       values.phonecode + values.phone,

@@ -63,7 +63,7 @@ function NavBar() {
           <NavLink
             to="/signup-login"
             onClick={toggle}
-            className="text-sm px-4 py-2 leading-none rounded text-white font-semibold border-white border hover:border-transparent hover:text-purple-800 hover:bg-white lg:mt-0 mx-1"
+            className="text-sm px-4 py-2 leading-none rounded text-white font-semibold border-white border hover:border-transparent hover:text-purple-800 hover:bg-white lg:mt-0 mx-1 transition-colors duration-300 ease"
           >
             Ingresa
           </NavLink>

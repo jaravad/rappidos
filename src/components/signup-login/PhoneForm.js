@@ -75,6 +75,7 @@ class PhoneForm extends React.Component {
                 onKeyPress={isInputNumber}
                 defaultValue={values.phone}
                 autoComplete="off"
+                required
               />
               <p className="text-xs mb-5">
                 Te vamos a confirmar el número por teléfono o mensaje de texto.
@@ -84,7 +85,7 @@ class PhoneForm extends React.Component {
               <input
                 type="submit"
                 value="Continúa"
-                className="w-full submit-btn py-3 font-bold text-white rounded-lg mb-3"
+                className="w-full submit-btn py-3 font-bold text-white rounded-lg mb-3 cursor-pointer"
                 onClick={() => this.continue(values.phonecode + values.phone)}
               />
             </div>
