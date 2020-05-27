@@ -1,7 +1,6 @@
 import React from "react";
 import api from "../../api";
 import "../../assets/css/spinner.css";
-import { Redirect } from "react-router-dom";
 //international phone codes
 const countryTelData = require("country-telephone-data");
 

@@ -22,7 +22,7 @@ class Api {
       console.log(error);
     }
   }
-  async verificarCodigo(telefono) {
+  async verificarCodigo(telefono, codigo) {
     try {
       let requestOptions = {
         method: "POST",
@@ -30,11 +30,12 @@ class Api {
         mode: "cors",
         body: JSON.stringify({
           telefono,
+          codigo,
         }),
         headers: { "Content-Type": "application/json" },
       };
       let query = await fetch(
-        `${Base_api}api/restaurant/mandarCodigo`,
+        `${Base_api}api/restaurant/verify`,
         requestOptions
       );
       let response = await query.json();

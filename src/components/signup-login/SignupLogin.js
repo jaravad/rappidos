@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PhoneForm from "./PhoneForm";
 import VerificationCode from "./VerificationCode";
-// import SignUpInfo from './SignUpInfo';
+import SignUpInfo from "./SignUpInfo";
 
 class SignupLogin extends Component {
   state = {
@@ -17,8 +17,11 @@ class SignupLogin extends Component {
   };
 
   // Proceed to the next step
-
-  nextStep = (nuevo) => {
+  nextStep = () => {
+    const { step } = this.state;
+    this.setState({ step: step + 1 });
+  };
+  nextStepSpecial = (nuevo) => {
     const { step } = this.state;
     this.setState({ step: step + 1, nuevo: nuevo });
   };
@@ -43,7 +46,7 @@ class SignupLogin extends Component {
       case 1:
         return (
           <PhoneForm
-            nextStep={this.nextStep}
+            nextStep={this.nextStepSpecial}
             handleChange={this.handleChange}
             values={values}
           />
@@ -52,6 +55,14 @@ class SignupLogin extends Component {
       case 2:
         return (
           <VerificationCode
+            nextStep={this.nextStep}
+            handleChange={this.handleChange}
+            values={values}
+          />
+        );
+      case 3:
+        return (
+          <SignUpInfo
             nextStep={this.nextStep}
             handleChange={this.handleChange}
             values={values}
