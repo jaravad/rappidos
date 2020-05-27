@@ -20,25 +20,19 @@ body {
   min-height: 40em;
 }
 
-.hero-section img {
+.img-animation {
   -webkit-animation: img-anim 1s ease-out;
           animation: img-anim 1s ease-out;
 }
 
-.hero-section h1 {
-  -webkit-animation: text-anim 0.8s ease 1s;
-          animation: text-anim 0.8s ease 1s;
+.right-to-left-anim {
+  -webkit-animation: right-to-left 1s ease;
+          animation: right-to-left 1s ease;
 }
 
-.hero-section p {
-  -webkit-animation: text-anim 0.8s ease 2s;
-          animation: text-anim 0.8s ease 2s;
-}
-
-.hero-section h1,
-.hero-section p {
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+.left-to-right-anim {
+  -webkit-animation: left-to-right 1s ease;
+          animation: left-to-right 1s ease;
 }
 
 .carousel__card {
@@ -50,6 +44,67 @@ body {
   background-image: url(../images/food-back.png);
 }
 
+/*============Spinner============*/
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ring div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #532a59;
+  border-radius: 50%;
+  -webkit-animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+          animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #532a59 transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  -webkit-animation-delay: -0.45s;
+          animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  -webkit-animation-delay: -0.3s;
+          animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  -webkit-animation-delay: -0.15s;
+          animation-delay: -0.15s;
+}
+
+@-webkit-keyframes lds-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes lds-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+/*===============================*/
 .submit-btn {
   background-color: #f95265;
 }
@@ -58,6 +113,7 @@ body {
   background-color: #fee2d5;
 }
 
+/*==========Keyframes==========*/
 @-webkit-keyframes nav-anim {
   from {
     top: -100px;
@@ -66,7 +122,6 @@ body {
     top: 0;
   }
 }
-
 @keyframes nav-anim {
   from {
     top: -100px;
@@ -98,22 +153,46 @@ body {
   }
 }
 
-@-webkit-keyframes text-anim {
+@-webkit-keyframes right-to-left {
   from {
+    opacity: 0;
     left: 100px;
   }
   to {
-    color: #2d3748;
+    opacity: 1;
     left: 0;
   }
 }
 
-@keyframes text-anim {
+@keyframes right-to-left {
   from {
+    opacity: 0;
     left: 100px;
   }
   to {
-    color: #2d3748;
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@-webkit-keyframes left-to-right {
+  from {
+    opacity: 0;
+    left: -100px;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@keyframes left-to-right {
+  from {
+    opacity: 0;
+    left: -100px;
+  }
+  to {
+    opacity: 1;
     left: 0;
   }
 }

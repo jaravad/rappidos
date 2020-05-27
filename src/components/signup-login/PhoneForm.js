@@ -1,8 +1,8 @@
-import React from "react";
-import api from "../../api";
-import "../../assets/css/spinner.css";
+import React from 'react';
+import api from '../../api';
+
 //international phone codes
-const countryTelData = require("country-telephone-data");
+const countryTelData = require('country-telephone-data');
 
 export function isInputNumber(evt) {
   const ch = String.fromCharCode(evt.which);
@@ -20,6 +20,7 @@ class PhoneForm extends React.Component {
     this.setState({ loading: true });
     let r = await api.pedirCodigo(phone);
     this.setState({ loading: false });
+    console.log(r);
     this.props.nextStep(r.body.nuevo);
   };
 
@@ -27,7 +28,7 @@ class PhoneForm extends React.Component {
     const { values, handleChange } = this.props;
     const options = countryTelData.allCountries.map((country, key) => {
       return (
-        <option value={"+" + country.dialCode} key={key}>
+        <option value={'+' + country.dialCode} key={key}>
           {country.name}
         </option>
       );
@@ -35,9 +36,14 @@ class PhoneForm extends React.Component {
     return (
       <main className="food-back h-screen w-screen bg-pink-100 bg-cover bg-no-repeat bg-bottom pt-32">
         <article className="flex flex-col items-center text-gray-800 w-4/5 md:max-w-sm bg-pink-100 h-auto rounded border border-solid border-gray-400 shadow-md p-8 mx-auto">
-          <h1 className="text-xl font-bold  text-center mb-4">Ingresa</h1>
+          <h1 className="text-xl font-bold text-center mb-4">Ingresa</h1>
           {this.state.loading ? (
-            <div className="lds-hourglass"></div>
+            <div className="lds-ring">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
           ) : (
             <div className="w-full">
               <label
@@ -48,7 +54,7 @@ class PhoneForm extends React.Component {
               </label>
               <select
                 defaultValue={values.phonecode}
-                onChange={handleChange("phonecode")}
+                onChange={handleChange('phonecode')}
                 className=" bg-white w-full border-solid border border-gray-400 rounded-md h-12 px-2 mb-3"
                 id="countries"
               >
@@ -65,7 +71,7 @@ class PhoneForm extends React.Component {
                 type="text"
                 id="phone"
                 placeholder="Número de teléfono"
-                onChange={handleChange("phone")}
+                onChange={handleChange('phone')}
                 onKeyPress={isInputNumber}
                 defaultValue={values.phone}
                 autoComplete="off"

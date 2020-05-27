@@ -9,18 +9,21 @@ function PlatesPage() {
         <div className="w-11/12 mx-auto">
           <article className="flex flex-col md:flex-row w-full rounded-lg plates-section pt-4 pb-6 md:py-8">
             <div className="w-full md:w-1/2 flex justify-center md:justify-end items-center">
-              <div className="w-4/5 my-12 md:my-0 text-gray-800">
+              <div className="w-4/5 my-12 md:my-0 text-gray-800 relative left-to-right-anim">
                 <h2 className="text-5xl font-semibold leading-tight mb-4 relative">
                   Bienvenido
                 </h2>
                 <p className="leading-tight relative">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Necessitatibus sequi harum a reiciendis porro dolore quis.
+                  Gestiona tu restaurante desde un solo lugar.
                 </p>
               </div>
             </div>
             <div className="w-full md:w-1/2 flex justify-center items-center">
-              <img className="w-7/12 md:w-6/12" src={chef} alt="A chef" />
+              <img
+                className="w-7/12 md:w-6/12 relative img-animation"
+                src={chef}
+                alt="A chef"
+              />
             </div>
           </article>
           <h2 className="text-2xl font-bold pl-3 mt-10">Plates</h2>
