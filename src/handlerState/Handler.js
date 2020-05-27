@@ -1,3 +1,4 @@
+require("dotenv").config();
 class Handler {
   server() {
     if (process.env.REACT_APP_API_URL) {

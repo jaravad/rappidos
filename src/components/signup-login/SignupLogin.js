@@ -56,14 +56,6 @@ class SignupLogin extends Component {
             values={values}
           />
         );
-      // case 3:
-      //   return (
-      //     <SignUpInfo
-      //       nextStep={this.nextStep}
-      //       handleChange={this.handleChange}
-      //       values={values}
-      //     />
-      //   );
       default:
         return (
           <PhoneForm

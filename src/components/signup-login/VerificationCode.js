@@ -1,14 +1,13 @@
-import React from 'react';
-import { isInputNumber } from './PhoneForm';
+import React from "react";
+import { isInputNumber } from "./PhoneForm";
 
 class VerificationCode extends React.Component {
   state = {
-    value: '',
+    value: "",
   };
 
-  continue = (e) => {
-    e.preventDefault();
-    this.props.nextStep();
+  handle = () => {
+
   };
 
   onChange = (value) => {
@@ -17,8 +16,6 @@ class VerificationCode extends React.Component {
 
   render() {
     const { values, handleChange } = this.props;
-
-    console.log(values);
     return (
       <main className="food-back h-screen w-screen bg-pink-100 bg-cover bg-no-repeat bg-bottom pt-32">
         <article className="text-gray-800 w-4/5 md:max-w-md bg-pink-100 h-auto rounded border border-solid border-gray-400 shadow-md p-12 mx-auto flex flex-col items-center">
@@ -32,7 +29,7 @@ class VerificationCode extends React.Component {
             className="bg-white block w-4/5 border-solid border border-gray-400 rounded-md h-12 px-2 mb-3 placeholder-gray-600 text-2xl text-center tracking-widest"
             type="text"
             id="code"
-            onChange={handleChange('code')}
+            onChange={handleChange("code")}
             maxLength={6}
             onKeyPress={isInputNumber}
             defaultValue={values.code}
@@ -46,7 +43,7 @@ class VerificationCode extends React.Component {
             type="submit"
             value="Continúa"
             className="w-full submit-btn py-3 font-bold text-white rounded-lg mb-3"
-            onClick={this.continue}
+            onClick={() => this.handler}
           />
         </article>
       </main>
