@@ -70,7 +70,11 @@ class VerificationCode extends React.Component {
                   value="Continúa"
                   className="w-full submit-btn py-3 font-bold text-white rounded-lg mb-3"
                   onClick={() =>
-                    this.handler(values.phone, values.code, values.nuevo)
+                    this.handler(
+                      values.phonecode + values.phone,
+                      values.code,
+                      values.nuevo
+                    )
                   }
                 />
               </>
