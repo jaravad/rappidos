@@ -1,8 +1,8 @@
 // import FoodBack from './FoodBack';
 
 import React, { Component } from 'react';
-import LogInForm from './LogInForm';
-import VerificationCode from '../VerificationCode';
+import LogInForm from '../signup-login/PhoneForm';
+import VerificationCode from '../signup-login/VerificationCode';
 
 class LogIn extends Component {
   state = {

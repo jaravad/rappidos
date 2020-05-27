@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import SignUpForm from './SignUpForm';
-import VerificationCode from '../signup-login/VerificationCode';
-import SignUpInfo from './SignUpInfo';
+import PhoneForm from './PhoneForm';
+import VerificationCode from './VerificationCode';
+// import SignUpInfo from './SignUpInfo';
 
-class SignUp extends Component {
+class SignupLogin extends Component {
   state = {
     step: 1,
     phonecode: '+57',
@@ -41,7 +41,7 @@ class SignUp extends Component {
     switch (step) {
       case 1:
         return (
-          <SignUpForm
+          <PhoneForm
             nextStep={this.nextStep}
             handleChange={this.handleChange}
             values={values}
@@ -56,17 +56,17 @@ class SignUp extends Component {
             values={values}
           />
         );
-      case 3:
-        return (
-          <SignUpInfo
-            nextStep={this.nextStep}
-            handleChange={this.handleChange}
-            values={values}
-          />
-        );
+      // case 3:
+      //   return (
+      //     <SignUpInfo
+      //       nextStep={this.nextStep}
+      //       handleChange={this.handleChange}
+      //       values={values}
+      //     />
+      //   );
       default:
         return (
-          <SignUpForm
+          <PhoneForm
             nextStep={this.nextStep}
             handleChange={this.handleChange}
             values={values}
@@ -76,4 +76,4 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp;
+export default SignupLogin;
