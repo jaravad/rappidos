@@ -26,6 +26,7 @@ class SignUpInfo extends React.Component {
               onChange={handleChange('name')}
               defaultValue={values.name}
               autoComplete="off"
+              required
             />
 
             <label
@@ -42,6 +43,7 @@ class SignUpInfo extends React.Component {
               onChange={handleChange('address')}
               defaultValue={values.address}
               autoComplete="off"
+              required
             />
 
             <label
@@ -58,6 +60,7 @@ class SignUpInfo extends React.Component {
               onChange={handleChange('category')}
               defaultValue={values.category}
               autoComplete="off"
+              required
             />
 
             <label
@@ -74,6 +77,7 @@ class SignUpInfo extends React.Component {
               onChange={handleChange('avgTime')}
               defaultValue={values.avgTime}
               autoComplete="off"
+              required
             />
 
             <input

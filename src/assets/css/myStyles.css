@@ -54,6 +54,10 @@ body {
   background-color: #f95265;
 }
 
+.plates-section {
+  background-color: #fee2d5;
+}
+
 @-webkit-keyframes nav-anim {
   from {
     top: -100px;
