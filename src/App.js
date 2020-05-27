@@ -38,8 +38,8 @@ function App() {
           <NavBar></NavBar>
           <PlatesPage></PlatesPage>
         </Route>
+        <Route component={Page404} />
       </Switch>
-      <Route component={Page404} />
     </Router>
   );
 }
