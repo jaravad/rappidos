@@ -39,14 +39,33 @@ class SignupLogin extends Component {
 
   render() {
     const { step } = this.state;
-    const { phonecode, phone, code } = this.state;
-    const values = { phonecode, phone, code };
+    const {
+      phonecode,
+      phone,
+      code,
+      nuevo,
+      name,
+      category,
+      address,
+      avgTime,
+    } = this.state;
+    const values = {
+      phonecode,
+      phone,
+      code,
+      nuevo,
+      name,
+      category,
+      address,
+      avgTime,
+    };
 
     switch (step) {
       case 1:
         return (
           <PhoneForm
             nextStep={this.nextStepSpecial}
+            nextStepSpecial={this.nextStepSpecial}
             handleChange={this.handleChange}
             values={values}
           />

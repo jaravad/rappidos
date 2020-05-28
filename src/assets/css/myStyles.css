@@ -44,6 +44,10 @@ body {
   background-image: url(../images/food-back.png);
 }
 
+textarea {
+  resize: none;
+}
+
 /*============Spinner============*/
 .lds-ring {
   display: inline-block;

@@ -44,7 +44,7 @@ class Api {
       console.log(error);
     }
   }
-  async register(x, passU, name, passApp) {
+  async register(name, category, address, avgTime, phone) {//phone includes +57
     //listo
     try {
       let requestOptions = {
@@ -52,10 +52,11 @@ class Api {
         redirect: "follow",
         mode: "cors",
         body: JSON.stringify({
-          x,
-          passU,
           name,
-          passApp,
+          category,
+          address,
+          avgTime,
+          phone
         }),
         headers: { "Content-Type": "application/json" },
       };
