@@ -2,9 +2,10 @@ import React from 'react';
 import Plate from './Plate';
 import image from '../../assets/images/mittagessen.jpg';
 import chef from '../../assets/images/chef.svg';
+import { Link } from 'react-router-dom';
 function PlatesPage() {
   return (
-    <div>
+    <div className="fade-anim">
       <div className="container mx-auto py-24">
         <div className="w-11/12 mx-auto">
           <div className="px-3">
@@ -31,8 +32,15 @@ function PlatesPage() {
               </div>
             </article>
           </div>
-          <section className="fade-anim">
-            <h2 className="text-2xl font-bold pl-3 mt-10">Platos</h2>
+          <section>
+            <Link
+              to="/plato"
+              className="inline-flex items-center text-gray-700 hover:bg-gray-700 hover:text-white rounded px-3 py-2 mt-8 transition-colors duration-300 mb-4 ml-3"
+            >
+              <span className="material-icons mr-3">add_circle_outline</span>
+              <span className="font-semibold">Añadir Plato</span>
+            </Link>
+            <h2 className="text-2xl font-bold pl-3">Platos</h2>
             <div className="flex flex-wrap">
               <Plate title={'Spaguetti'} p={'Disfrutalo'} img={image} key={1} />
               {/* <Plate title={'Spaguetti'} p={'Disfrutalo'} img={image} key={1} />

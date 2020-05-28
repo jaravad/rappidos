@@ -25,7 +25,7 @@ class SignUpInfo extends React.Component {
       return <Redirect to="/platos"></Redirect>;
     }
     return (
-      <main className="fade-anim food-back min-h-screen w-screen bg-pink-100 bg-cover bg-no-repeat bg-bottom py-32">
+      <main className="fade-anim food-back min-h-screen w-full bg-pink-100 bg-cover bg-no-repeat bg-bottom py-32">
         <ToastContainer />
         <article className="text-gray-800 w-4/5 md:max-w-sm bg-pink-100 h-auto rounded border border-solid border-gray-400 shadow-md p-8 mx-auto ">
           <h1 className="text-xl font-bold  text-center mb-4">
