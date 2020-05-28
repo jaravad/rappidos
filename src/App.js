@@ -1,12 +1,12 @@
-import React from 'react';
-import NavBar from './components/NavBar';
-import Landing from './components/landing/Landing';
-import SignupLogin from './components/signup-login/SignupLogin';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import PlatesPage from './components/plates/PlatesPage';
-import AddPlate from './components/AddPlate';
-import './assets/css/404error.css';
-import ScrollToTop from './components/ScrollToTop';
+import React from "react";
+import NavBar from "./components/NavBar";
+import Landing from "./components/landing/Landing";
+import SignupLogin from "./components/signup-login/SignupLogin";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import PlatesPage from "./components/plates/PlatesPage";
+import AddPlate from "./components/AddPlate";
+import "./assets/css/404error.css";
+import ScrollToTop from "./components/ScrollToTop";
 
 export function isInputNumber(evt) {
   const ch = String.fromCharCode(evt.which);
@@ -33,9 +33,10 @@ const Page404 = ({ location }) => (
 function App() {
   return (
     <Router>
-      <NavBar />
       <ScrollToTop />
+      <NavBar />
       <Switch>
+        
         <Route exact path="/">
           <Landing />
         </Route>
