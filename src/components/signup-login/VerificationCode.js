@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 import { isInputNumber } from '../../App';
-import { Redirect } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { Redirect } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import api from "../../api";
+import api from '../../api';
 class VerificationCode extends React.Component {
   state = {
-    value: "",
+    value: '',
     loading: false,
     navigate: false,
   };
@@ -22,7 +22,7 @@ class VerificationCode extends React.Component {
         this.setState({ navigate: true });
       }
     } else {
-      toast("El código de verificación no es válido");
+      toast('El código de verificación no es válido');
     }
   };
 
@@ -37,7 +37,7 @@ class VerificationCode extends React.Component {
     const { values, handleChange } = this.props;
     return (
       <React.Fragment>
-        <main className="food-back h-screen w-screen bg-pink-100 bg-cover bg-no-repeat bg-bottom pt-32">
+        <main className="fade-anim food-back h-screen w-screen bg-pink-100 bg-cover bg-no-repeat bg-bottom pt-32">
           <article className="text-gray-800 w-4/5 md:max-w-md bg-pink-100 h-auto rounded border border-solid border-gray-400 shadow-md p-12 mx-auto flex flex-col items-center">
             <ToastContainer />
             <h1 className="text-xl font-bold text-center mb-4">
@@ -54,7 +54,7 @@ class VerificationCode extends React.Component {
                   className="bg-white block w-full border-solid border border-gray-400 rounded-md h-12 px-2 mb-3 placeholder-gray-600 text-2xl text-center tracking-widest mb-8"
                   type="text"
                   id="code"
-                  onChange={handleChange("code")}
+                  onChange={handleChange('code')}
                   maxLength={6}
                   onKeyPress={isInputNumber}
                   defaultValue={values.code}

@@ -140,7 +140,7 @@ class AddPlate extends React.Component {
             </div>
           </article>
         </div>
-        <div className="w-5/12 h-screen pt-24 pb-12 hidden sm:flex justify-center sm:fixed md:justify-start align-middle right-0">
+        <div className="w-5/12 h-screen pt-24 pb-12 hidden sm:flex justify-center sm:fixed md:justify-start align-middle right-0 upper-corner-anim">
           <img src={plate} alt="A chef" className="h-full" />
         </div>
       </main>

@@ -1,9 +1,9 @@
-import React from "react";
-import api from "../../api";
-import "../../assets/css/myStyles.css";
-import { ToastContainer, toast } from "react-toastify";
-import { Redirect } from "react-router-dom";
-import "react-toastify/dist/ReactToastify.css";
+import React from 'react';
+import api from '../../api';
+import '../../assets/css/myStyles.css';
+import { ToastContainer, toast } from 'react-toastify';
+import { Redirect } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
 class SignUpInfo extends React.Component {
   state = {
     loading: false,
@@ -16,7 +16,7 @@ class SignUpInfo extends React.Component {
     if (!r.error) {
       this.setState({ navigate: true });
     } else {
-      toast("¡Ocurrió un error!");
+      toast('¡Ocurrió un error!');
     }
   };
   render() {
@@ -25,7 +25,7 @@ class SignUpInfo extends React.Component {
       return <Redirect to="/platos"></Redirect>;
     }
     return (
-      <main className="food-back min-h-screen w-screen bg-pink-100 bg-cover bg-no-repeat bg-bottom py-32">
+      <main className="fade-anim food-back min-h-screen w-screen bg-pink-100 bg-cover bg-no-repeat bg-bottom py-32">
         <ToastContainer />
         <article className="text-gray-800 w-4/5 md:max-w-sm bg-pink-100 h-auto rounded border border-solid border-gray-400 shadow-md p-8 mx-auto ">
           <h1 className="text-xl font-bold  text-center mb-4">
@@ -51,7 +51,7 @@ class SignUpInfo extends React.Component {
                 type="text"
                 id="name"
                 placeholder="Nombre"
-                onChange={handleChange("name")}
+                onChange={handleChange('name')}
                 defaultValue={values.name}
                 autoComplete="off"
                 required
@@ -68,7 +68,7 @@ class SignUpInfo extends React.Component {
                 type="text"
                 id="address"
                 placeholder="Dirección"
-                onChange={handleChange("address")}
+                onChange={handleChange('address')}
                 defaultValue={values.address}
                 autoComplete="off"
                 required
@@ -85,7 +85,7 @@ class SignUpInfo extends React.Component {
                 type="text"
                 id="category"
                 placeholder="Categoría"
-                onChange={handleChange("category")}
+                onChange={handleChange('category')}
                 defaultValue={values.category}
                 autoComplete="off"
                 required
@@ -102,7 +102,7 @@ class SignUpInfo extends React.Component {
                 type="text"
                 id="avgTime"
                 placeholder="Tiempo"
-                onChange={handleChange("avgTime")}
+                onChange={handleChange('avgTime')}
                 defaultValue={values.avgTime}
                 autoComplete="off"
                 required

@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import PlatesPage from './components/plates/PlatesPage';
 import AddPlate from './components/AddPlate';
 import './assets/css/404error.css';
+import ScrollToTop from './components/ScrollToTop';
 
 export function isInputNumber(evt) {
   const ch = String.fromCharCode(evt.which);
@@ -32,6 +33,7 @@ const Page404 = ({ location }) => (
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Switch>
         <Route exact path="/">
           <NavBar />

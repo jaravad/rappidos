@@ -1,4 +1,6 @@
 /*tailwind colors*/
+/*Material Icons*/
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 html {
   scroll-behavior: smooth;
 }
@@ -13,26 +15,6 @@ body {
   z-index: 10;
   -webkit-animation: nav-anim 1s ease-in-out;
           animation: nav-anim 1s ease-in-out;
-}
-
-.hero-section {
-  background-color: #fee2d5;
-  min-height: 40em;
-}
-
-.img-animation {
-  -webkit-animation: img-anim 1s ease-out;
-          animation: img-anim 1s ease-out;
-}
-
-.right-to-left-anim {
-  -webkit-animation: right-to-left 1s ease;
-          animation: right-to-left 1s ease;
-}
-
-.left-to-right-anim {
-  -webkit-animation: left-to-right 1s ease;
-          animation: left-to-right 1s ease;
 }
 
 .carousel__card {
@@ -119,10 +101,17 @@ textarea {
   background-color: #f72139;
 }
 
+/*============Plates===========*/
 .plates-section {
   background-color: #fee2d5;
 }
 
+.plates__delete {
+  right: 15px;
+  bottom: 15px;
+}
+
+/*=============================*/
 /*==========Keyframes==========*/
 @-webkit-keyframes nav-anim {
   from {
@@ -141,69 +130,155 @@ textarea {
   }
 }
 
-@-webkit-keyframes img-anim {
+@-webkit-keyframes from-bottom {
   from {
     opacity: 0;
-    top: 100px;
+    -webkit-transform: translate(0, 100px);
+            transform: translate(0, 100px);
   }
   to {
     opacity: 1;
-    top: 0;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
   }
 }
 
-@keyframes img-anim {
+@keyframes from-bottom {
   from {
     opacity: 0;
-    top: 100px;
+    -webkit-transform: translate(0, 100px);
+            transform: translate(0, 100px);
   }
   to {
     opacity: 1;
-    top: 0;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
   }
 }
 
 @-webkit-keyframes right-to-left {
   from {
     opacity: 0;
-    left: 100px;
+    -webkit-transform: translate(100px, 0);
+            transform: translate(100px, 0);
   }
   to {
     opacity: 1;
-    left: 0;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
   }
 }
 
 @keyframes right-to-left {
   from {
     opacity: 0;
-    left: 100px;
+    -webkit-transform: translate(100px, 0);
+            transform: translate(100px, 0);
   }
   to {
     opacity: 1;
-    left: 0;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
   }
 }
 
 @-webkit-keyframes left-to-right {
   from {
     opacity: 0;
-    left: -100px;
+    -webkit-transform: translate(-100px, 0);
+            transform: translate(-100px, 0);
   }
   to {
     opacity: 1;
-    left: 0;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
   }
 }
 
 @keyframes left-to-right {
   from {
     opacity: 0;
-    left: -100px;
+    -webkit-transform: translate(-100px, 0);
+            transform: translate(-100px, 0);
   }
   to {
     opacity: 1;
-    left: 0;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
   }
+}
+
+@-webkit-keyframes upper-corner {
+  from {
+    opacity: 0;
+    -webkit-transform: translate(100px, -100px);
+            transform: translate(100px, -100px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+@keyframes upper-corner {
+  from {
+    opacity: 0;
+    -webkit-transform: translate(100px, -100px);
+            transform: translate(100px, -100px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hero-section {
+  background-color: #fee2d5;
+  min-height: 40em;
+}
+
+.from-bottom-anim {
+  -webkit-animation: from-bottom 1s ease-out;
+          animation: from-bottom 1s ease-out;
+}
+
+.right-to-left-anim {
+  -webkit-animation: right-to-left 1s ease;
+          animation: right-to-left 1s ease;
+}
+
+.left-to-right-anim {
+  -webkit-animation: left-to-right 1s ease;
+          animation: left-to-right 1s ease;
+}
+
+.upper-corner-anim {
+  -webkit-animation: upper-corner 1s ease;
+          animation: upper-corner 1s ease;
+}
+
+.fade-anim {
+  -webkit-animation: fade 1s ease;
+          animation: fade 1s ease;
 }
 /*# sourceMappingURL=myStyles.css.map */
