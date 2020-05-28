@@ -20,10 +20,11 @@ class PhoneForm extends React.Component {
     const options = countryTelData.allCountries.map((country, key) => {
       return (
         <option value={'+' + country.dialCode} key={key}>
-          {country.name}
+          {country.name.split(' ')[0]}
         </option>
       );
     });
+
     return (
       <main className="fade-anim food-back h-screen w-full bg-pink-100 bg-cover bg-no-repeat bg-bottom pt-32">
         <article className="flex flex-col items-center text-gray-800 w-4/5 md:max-w-sm bg-pink-100 h-auto rounded border border-solid border-gray-400 shadow-md p-8 mx-auto">

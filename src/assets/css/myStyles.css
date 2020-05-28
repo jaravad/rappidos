@@ -1,6 +1,10 @@
 /*tailwind colors*/
-/*Material Icons*/
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+*:focus {
+  outline: #532a59 auto 1px;
+}
+
+/*Material Icons*/
 html {
   scroll-behavior: smooth;
 }
@@ -28,6 +32,10 @@ body {
 
 textarea {
   resize: none;
+}
+
+footer {
+  background-color: #532a59;
 }
 
 /*============Spinner============*/

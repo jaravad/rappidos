@@ -9,6 +9,10 @@ $gray-800: #2d3748;
 
 $gray-placeholder: #a0aec0;
 
+*:focus {
+  outline: $color-5 auto 1px;
+}
+
 /*Material Icons*/
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
@@ -39,6 +43,10 @@ body {
 
 textarea {
   resize: none;
+}
+
+footer {
+  background-color: $color-5;
 }
 /*============Spinner============*/
 

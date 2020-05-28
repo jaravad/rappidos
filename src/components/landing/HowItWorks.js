@@ -29,7 +29,7 @@ function HowItWorks(props) {
     );
   });
   return (
-    <section className="w-full py-12 bg-pink-100">
+    <section className="w-full pt-12 pb-24 bg-pink-100">
       <div className="w-4/5 mx-auto">
         <h2 className="text-4xl font-normal leading-tight mb-8">
           Como funciona <strong>RAPPIdos</strong> para restaurantes socios

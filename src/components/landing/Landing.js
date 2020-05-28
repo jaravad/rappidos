@@ -3,12 +3,15 @@ import React from 'react';
 import Hero from './Hero';
 import LandingCarousel from './LandingCarousel';
 import HowItWorks from './HowItWorks';
+import Footer from './Footer';
+
 function Landing() {
   return (
     <div>
-      <Hero></Hero>
-      <LandingCarousel></LandingCarousel>
-      <HowItWorks></HowItWorks>
+      <Hero />
+      <LandingCarousel />
+      <HowItWorks />
+      <Footer />
     </div>
   );
 }
