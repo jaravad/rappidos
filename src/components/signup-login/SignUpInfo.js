@@ -11,7 +11,6 @@ class SignUpInfo extends React.Component {
   };
   handleSubmit = async (name, category, address, avgTime, phone) => {
     this.setState({ loading: true });
-    console.log(phone);
     let r = await api.register(name, category, address, avgTime, phone);
     this.setState({ loading: false });
     if (!r.error) {
