@@ -33,23 +33,20 @@ const Page404 = ({ location }) => (
 function App() {
   return (
     <Router>
+      <NavBar />
       <ScrollToTop />
       <Switch>
         <Route exact path="/">
-          <NavBar />
           <Landing />
         </Route>
         <Route exact path="/#how-it-works"></Route>
         <Route exact path="/signup-login">
-          <NavBar />
           <SignupLogin />
         </Route>
         <Route exact path="/platos">
-          <NavBar />
           <PlatesPage />
         </Route>
         <Route exact path="/plato">
-          <NavBar />
           <AddPlate />
         </Route>
         <Route component={Page404} />

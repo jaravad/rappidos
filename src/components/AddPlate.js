@@ -1,21 +1,40 @@
-import React from 'react';
-import { isInputNumber } from '../App';
-import plate from '../assets/images/plate.svg';
+import React from "react";
+import { isInputNumber } from "../App";
+import axios from "axios";
+import plate from "../assets/images/plate.svg";
 class AddPlate extends React.Component {
-  state = {
-    name: '',
-    weight: '',
-    calories: '',
-    people: '',
-    price: '',
-    image: '',
-    description: '',
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "",
+      weight: "",
+      calories: "",
+      people: "",
+      price: "",
+      image: "",
+      description: "",
+      selectedFile: null,
+      loaded: null,
+    };
+  }
+  state;
 
   handleChange = (input) => (e) => {
     this.setState({ [input]: e.target.value });
   };
-
+  onChangeHandler = (event) => {
+    this.setState({
+      selectedFile: event.target.files[0],
+      loaded: 0,
+    });
+  };
+  onClickHandler = () => {
+    const data = new FormData();
+    data.append("file", this.state.selectedFile);
+    axios.post("http://localhost:8000/upload", data, {}).then((res) => {
+      console.log(res.statusText);
+    });
+  };
   render() {
     return (
       <main className="w-full bg-pink-100 bg-cover bg-no-repeat bg-bottom flex">
@@ -37,7 +56,7 @@ class AddPlate extends React.Component {
                 type="text"
                 id="name"
                 placeholder="Nombre"
-                onChange={this.handleChange('name')}
+                onChange={this.handleChange("name")}
                 defaultValue={this.state.name}
                 autoComplete="off"
                 required
@@ -51,7 +70,7 @@ class AddPlate extends React.Component {
                 type="text"
                 id="weight"
                 placeholder="Peso"
-                onChange={this.handleChange('weight')}
+                onChange={this.handleChange("weight")}
                 onKeyPress={isInputNumber}
                 defaultValue={this.state.weight}
                 autoComplete="off"
@@ -66,7 +85,7 @@ class AddPlate extends React.Component {
                 type="text"
                 id="calories"
                 placeholder="Calorias"
-                onChange={this.handleChange('calories')}
+                onChange={this.handleChange("calories")}
                 onKeyPress={isInputNumber}
                 defaultValue={this.state.calories}
                 autoComplete="off"
@@ -81,7 +100,7 @@ class AddPlate extends React.Component {
                 type="text"
                 id="people"
                 placeholder="Personas"
-                onChange={this.handleChange('people')}
+                onChange={this.handleChange("people")}
                 onKeyPress={isInputNumber}
                 defaultValue={this.state.people}
                 autoComplete="off"
@@ -96,7 +115,7 @@ class AddPlate extends React.Component {
                 type="text"
                 id="price"
                 placeholder="Precio"
-                onChange={this.handleChange('price')}
+                onChange={this.handleChange("price")}
                 onKeyPress={isInputNumber}
                 defaultValue={this.state.price}
                 autoComplete="off"
@@ -110,7 +129,8 @@ class AddPlate extends React.Component {
                 className=" block w-full border-solid border border-gray-400 rounded-md h-12  mb-3 p-2 placeholder-gray-600"
                 type="file"
                 id="image"
-                onChange={this.handleChange('image')}
+                name=""
+                onChange={this.onChangeHandler}
                 defaultValue={this.state.image}
                 autoComplete="off"
                 required
@@ -126,7 +146,7 @@ class AddPlate extends React.Component {
                 className="bg-white block w-full border-solid border border-gray-400 rounded-md h-20 p-2 mb-3 placeholder-gray-600"
                 id="description"
                 placeholder="Escriba descripción"
-                onChange={this.handleChange('description')}
+                onChange={this.handleChange("description")}
                 defaultValue={this.state.description}
                 autoComplete="off"
                 required
@@ -136,6 +156,7 @@ class AddPlate extends React.Component {
                 type="submit"
                 value="Añadir"
                 className="w-full submit-btn py-3 font-bold text-white rounded-lg mb-3 cursor-pointer"
+                onClick={this.onClickHandler}
               />
             </div>
           </article>

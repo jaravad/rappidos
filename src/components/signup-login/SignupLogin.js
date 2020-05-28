@@ -64,7 +64,6 @@ class SignupLogin extends Component {
       case 1:
         return (
           <PhoneForm
-            nextStep={this.nextStepSpecial}
             nextStepSpecial={this.nextStepSpecial}
             handleChange={this.handleChange}
             values={values}
