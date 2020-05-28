@@ -15,7 +15,18 @@ export function isInputNumber(evt) {
     evt.preventDefault();
   }
 }
-
+const NavRoute = ({ exact, path, component: Component }) => (
+  <Route
+    exact={exact}
+    path={path}
+    render={(props) => (
+      <div>
+        <NavBar />
+        <Component {...props} />
+      </div>
+    )}
+  />
+);
 const Page404 = ({ location }) => (
   <div className="not-found">
     <h1>404 ERROR</h1>
@@ -36,20 +47,11 @@ function App() {
       <ScrollToTop />
       <NavBar />
       <Switch>
-        
-        <Route exact path="/">
-          <Landing />
-        </Route>
+        <NavRoute exact path="/" component={Landing} />
         <Route exact path="/#how-it-works"></Route>
-        <Route exact path="/signup-login">
-          <SignupLogin />
-        </Route>
-        <Route exact path="/platos">
-          <PlatesPage />
-        </Route>
-        <Route exact path="/plato">
-          <AddPlate />
-        </Route>
+        <NavRoute exact path="/signup-login" component={SignupLogin} />
+        <NavRoute exact path="/platos" component={PlatesPage} />
+        <NavRoute exact path="/plato" component={AddPlate} />
         <Route component={Page404} />
       </Switch>
     </Router>
