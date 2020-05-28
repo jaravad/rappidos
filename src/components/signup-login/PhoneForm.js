@@ -1,16 +1,8 @@
 import React from 'react';
 import api from '../../api';
-
+import { isInputNumber } from '../../App';
 //international phone codes
 const countryTelData = require('country-telephone-data');
-
-export function isInputNumber(evt) {
-  const ch = String.fromCharCode(evt.which);
-
-  if (!/[0-9]/.test(ch)) {
-    evt.preventDefault();
-  }
-}
 
 class PhoneForm extends React.Component {
   state = {

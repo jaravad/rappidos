@@ -1,5 +1,5 @@
 import React from 'react';
-import { isInputNumber } from './PhoneForm';
+import { isInputNumber } from '../../App';
 import { Redirect } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 

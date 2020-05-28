@@ -1,10 +1,20 @@
-import React from "react";
-import NavBar from "./components/NavBar";
-import Landing from "./components/landing/Landing";
-import SignupLogin from "./components/signup-login/SignupLogin";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import PlatesPage from "./components/plates/PlatesPage";
-import "./assets/css/404error.css";
+import React from 'react';
+import NavBar from './components/NavBar';
+import Landing from './components/landing/Landing';
+import SignupLogin from './components/signup-login/SignupLogin';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import PlatesPage from './components/plates/PlatesPage';
+import AddPlate from './components/AddPlate';
+import './assets/css/404error.css';
+
+export function isInputNumber(evt) {
+  const ch = String.fromCharCode(evt.which);
+
+  if (!/[0-9]/.test(ch)) {
+    evt.preventDefault();
+  }
+}
+
 const Page404 = ({ location }) => (
   <div className="not-found">
     <h1>404 ERROR</h1>
@@ -24,19 +34,21 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-          <NavBar></NavBar>
-          <Landing></Landing>
+          <NavBar />
+          <Landing />
         </Route>
-        <Route exact path="/#how-it-works">
-          <NavBar></NavBar>
-        </Route>
+        <Route exact path="/#how-it-works"></Route>
         <Route exact path="/signup-login">
-          <NavBar></NavBar>
-          <SignupLogin></SignupLogin>
+          <NavBar />
+          <SignupLogin />
         </Route>
         <Route exact path="/platos">
-          <NavBar></NavBar>
-          <PlatesPage></PlatesPage>
+          <NavBar />
+          <PlatesPage />
+        </Route>
+        <Route exact path="/plato">
+          <NavBar />
+          <AddPlate />
         </Route>
         <Route component={Page404} />
       </Switch>
