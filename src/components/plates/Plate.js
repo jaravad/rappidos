@@ -21,7 +21,7 @@ function Plate(props) {
 
   return (
     <article className="p-3 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 fade-anim">
-      <div className="w-full rounded-md overflow-hidden shadow-md bg-white relative">
+      <div className="w-full h-full rounded-md overflow-hidden shadow-md bg-white relative">
         <div className="w-full h-48">
           <img
             className="w-full h-full object-cover"
