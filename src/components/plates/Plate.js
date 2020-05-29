@@ -4,9 +4,9 @@ function Plate(props) {
   return (
     <article className="p-3 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 ">
       <div className="w-full rounded-md overflow-hidden shadow-md bg-white relative">
-        <div className="w-full h-40">
+        <div className="w-full h-48">
           <img
-            className="w-full object-cover object-center"
+            className="w-full h-fulll object-cover"
             src={props.image}
             alt={props.title}
           />
