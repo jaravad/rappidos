@@ -15,9 +15,7 @@ function Plate(props) {
     }).then(async (result) => {
       if (!result.value) {
         let r = await api.eliminarPlato(props.id);
-        console.log(r);
-        console.log(r.deleted);
-        if (r.deleted) {
+        if (r.body.deleted) {
           Swal.fire("Plato borrado!", "El plato ha sido borrado.", "success");
         } else {
           Swal.fire({
