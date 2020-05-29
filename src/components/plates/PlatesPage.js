@@ -59,14 +59,21 @@ class PlatesPage extends React.Component {
                   ? this.state.arreglo.map((meal) => {
                       return (
                         <Plate
-                          title={meal.nombre}
-                          p={meal.descripcion}
-                          img={meal.uri}
+                          name={meal.nombre}
+                          description={
+                           meal.descripcion
+                          }
+                          calories={meal.calorias}
+                          people={meal.numPersonas}
+                          weight={meal.peso}
+                          price={meal.peso}
+                          image={meal.uri}
                           key={meal._id}
                         />
                       );
                     })
                   : null}
+
                 {/* <Plate title={'Spaguetti'} p={'Disfrutalo'} img={image} key={1} />
             <Plate title={'Spaguetti'} p={'Disfrutalo'} img={image} key={1} />
             <Plate title={'Spaguetti'} p={'Disfrutalo'} img={image} key={1} />
