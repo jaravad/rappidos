@@ -17,7 +17,15 @@ function Plate(props) {
         let r = api.eliminarPlato(key);
         console.log(r);
         console.log(r.deleted);
-        Swal.fire("Plato borrado!", "El plato ha sido borrado.", "success");
+        if(r.deleted){
+          Swal.fire("Plato borrado!", "El plato ha sido borrado.", "success");
+        }else{
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: '¡Algo salió mal!',
+          })
+        }
       }
     });
   };
@@ -81,7 +89,7 @@ function Plate(props) {
         </div>
         <button
           className="p-1 rounded flex justify-center items-center absolute plates__delete transition-colors duration-300 ease hover:bg-red-500 text-red-500 hover:text-white"
-          onClick={() => deleteMeal(this.props.key)}
+          onClick={() => deleteMeal(props.key)}
         >
           <span className="material-icons">delete</span>
         </button>
