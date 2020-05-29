@@ -46,7 +46,6 @@ class Api {
   }
   async register(name, category, address, avgTime, phone) {
     //phone includes +57
-    //listo
     try {
       let requestOptions = {
         method: "POST",
