@@ -8,7 +8,6 @@ class PlatesPage extends React.Component {
   async componentDidMount() {
     let r = await api.traerPlatos();
     this.setState({ arreglo: r.body });
-    console.log(this.state.arreglo);
   }
   state = {
     arreglo: [],
