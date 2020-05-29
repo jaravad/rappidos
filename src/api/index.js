@@ -99,7 +99,7 @@ class Api {
         redirect: "follow",
       };
       let query = await fetch(
-        "http://localhost:8080/api/restaurant/nuevoProducto/",
+        `${Base_api}api/restaurant/nuevoProducto/`,
         requestOptions
       );
       let queryJson = await query.json();
