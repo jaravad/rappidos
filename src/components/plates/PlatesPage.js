@@ -68,6 +68,7 @@ class PlatesPage extends React.Component {
                           weight={meal.peso}
                           price={meal.peso}
                           image={meal.uri}
+                          id={meal._id}
                           key={meal._id}
                         />
                       );

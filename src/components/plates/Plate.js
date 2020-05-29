@@ -14,7 +14,7 @@ function Plate(props) {
       cancelButtonText: "Borrar plato",
     }).then(async (result) => {
       if (!result.value) {
-        let r = await api.eliminarPlato(props.key);
+        let r = await api.eliminarPlato(props.id);
         console.log(r);
         console.log(r.deleted);
         if (r.deleted) {
