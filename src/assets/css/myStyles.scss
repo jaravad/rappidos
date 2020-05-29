@@ -31,6 +31,10 @@ body {
   animation: nav-anim 1s ease-in-out;
 }
 
+.nav-btn:hover {
+  background-color: darken($color: $color-5, $amount: 10%);
+}
+
 .carousel__card {
   min-height: 25em;
 }

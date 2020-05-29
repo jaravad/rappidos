@@ -1,21 +1,21 @@
-import React from "react";
-import { isInputNumber } from "../../App";
-import plate from "../../assets/images/plate.svg";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import "../../assets/css/myStyles.css";
-import api from "../../api/";
+import React from 'react';
+import { isInputNumber } from '../../App';
+import plate from '../../assets/images/plate.svg';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import '../../assets/css/myStyles.css';
+import api from '../../api/';
 class AddPlate extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
-      weight: "",
-      calories: "",
-      people: "",
-      price: "",
-      image: "",
-      description: "",
+      name: '',
+      weight: '',
+      calories: '',
+      people: '',
+      price: '',
+      image: '',
+      description: '',
       selectedFile: null,
       loaded: null,
       loading: false,
@@ -35,7 +35,7 @@ class AddPlate extends React.Component {
     this.setState({ loading: true });
     let r = await api.addMeal(
       this.state.selectedFile,
-      localStorage.getItem("restaurante"),
+      localStorage.getItem('restaurante'),
       this.state.name,
       this.state.weight,
       this.state.calories,
@@ -44,15 +44,15 @@ class AddPlate extends React.Component {
       this.state.description
     );
     if (r.error) {
-      toast("Ocurrió un error, intentalo más tarde. ");
+      toast('Ocurrió un error, intentalo más tarde. ');
     } else {
-      toast("Se ha agregado el plato exitosamente.");
+      toast('Se ha agregado el plato exitosamente.');
     }
     this.setState({ loading: false });
   };
   render() {
     return (
-      <main className="w-full bg-pink-100 bg-cover bg-no-repeat bg-bottom flex fade-anim">
+      <main className="w-full h-screen bg-pink-100 bg-cover bg-no-repeat bg-bottom flex fade-anim">
         <div className="w-full sm:w-7/12 py-24">
           <ToastContainer />
           <article className="flex flex-col items-start text-gray-800 w-4/5 lg:w-8/12 h-auto rounded border border-solid border-gray-400 shadow p-8 mx-auto">
@@ -80,7 +80,7 @@ class AddPlate extends React.Component {
                   type="text"
                   id="name"
                   placeholder="Nombre"
-                  onChange={this.handleChange("name")}
+                  onChange={this.handleChange('name')}
                   defaultValue={this.state.name}
                   autoComplete="off"
                   required
@@ -94,7 +94,7 @@ class AddPlate extends React.Component {
                   type="text"
                   id="weight"
                   placeholder="Peso"
-                  onChange={this.handleChange("weight")}
+                  onChange={this.handleChange('weight')}
                   onKeyPress={isInputNumber}
                   defaultValue={this.state.weight}
                   autoComplete="off"
@@ -109,7 +109,7 @@ class AddPlate extends React.Component {
                   type="text"
                   id="calories"
                   placeholder="Calorias"
-                  onChange={this.handleChange("calories")}
+                  onChange={this.handleChange('calories')}
                   onKeyPress={isInputNumber}
                   defaultValue={this.state.calories}
                   autoComplete="off"
@@ -124,7 +124,7 @@ class AddPlate extends React.Component {
                   type="text"
                   id="people"
                   placeholder="Personas"
-                  onChange={this.handleChange("people")}
+                  onChange={this.handleChange('people')}
                   onKeyPress={isInputNumber}
                   defaultValue={this.state.people}
                   autoComplete="off"
@@ -139,7 +139,7 @@ class AddPlate extends React.Component {
                   type="text"
                   id="price"
                   placeholder="Precio"
-                  onChange={this.handleChange("price")}
+                  onChange={this.handleChange('price')}
                   onKeyPress={isInputNumber}
                   defaultValue={this.state.price}
                   autoComplete="off"
@@ -170,7 +170,7 @@ class AddPlate extends React.Component {
                   className="bg-white block w-full border-solid border border-gray-400 rounded-md h-20 p-2 mb-3 placeholder-gray-600"
                   id="description"
                   placeholder="Escriba descripción"
-                  onChange={this.handleChange("description")}
+                  onChange={this.handleChange('description')}
                   defaultValue={this.state.description}
                   autoComplete="off"
                   required

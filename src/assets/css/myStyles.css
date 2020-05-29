@@ -21,6 +21,10 @@ body {
           animation: nav-anim 1s ease-in-out;
 }
 
+.nav-btn:hover {
+  background-color: #331a36;
+}
+
 .carousel__card {
   min-height: 25em;
 }

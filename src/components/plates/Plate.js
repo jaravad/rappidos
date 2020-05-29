@@ -6,7 +6,7 @@ function Plate(props) {
       <div className="w-full rounded-md overflow-hidden shadow-md bg-white relative">
         <div className="w-full h-48">
           <img
-            className="w-full h-fulll object-cover"
+            className="w-full h-full object-cover"
             src={props.image}
             alt={props.title}
           />

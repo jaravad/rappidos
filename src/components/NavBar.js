@@ -18,6 +18,36 @@ function NavBar() {
     localStorage.clear();
   };
 
+  const signInBtn = (
+    <NavLink
+      to="/signup-login"
+      onClick={toggle}
+      className="text-sm px-4 py-2 leading-none rounded text-white font-semibold border-white border hover:border-transparent hover:text-purple-800 hover:bg-white lg:mt-0 mx-1 transition-colors duration-300 ease"
+    >
+      Ingresa
+    </NavLink>
+  );
+
+  const logOutBtn = (
+    <NavLink
+      to="/"
+      onClick={exit}
+      className="text-sm px-4 py-2 leading-none rounded text-white font-semibold border-white border hover:border-transparent hover:text-purple-800 hover:bg-white lg:mt-0 mx-1 transition-colors duration-300 ease"
+    >
+      Salir
+    </NavLink>
+  );
+
+  const platesBtn = (
+    <NavHashLink
+      to="/platos"
+      onClick={toggle}
+      className="nav-btn rounded mt-4 px-4 py-3 text-white hover:text-white font-semibold mx-1 rounded transition-colors duration-300 ease-in-out"
+    >
+      Mis Platos
+    </NavHashLink>
+  );
+
   return (
     <nav className="navbar flex items-center justify-between flex-wrap px-6 py-4 fixed w-full shadow-lg">
       <div className="flex items-center flex-shrink-0 text-white mr-6">
@@ -60,31 +90,25 @@ function NavBar() {
           <NavHashLink
             to="/#how-it-works"
             onClick={toggle}
-            className="mt-4 text-white hover:text-white font-semibold mx-1"
+            className="nav-btn rounded mt-4 px-4 py-3 text-white hover:text-white font-semibold mx-1 rounded transition-colors duration-300 ease-in-out"
           >
             Como funciona
           </NavHashLink>
-        </div>
-        <div className="flex lg:inline-block py-2 lg:py-0">
+
           {localStorage.getItem('restaurante') === null ? (
-            <NavLink
-              to="/signup-login"
-              onClick={toggle}
-              className="text-sm px-4 py-2 leading-none rounded text-white font-semibold border-white border hover:border-transparent hover:text-purple-800 hover:bg-white lg:mt-0 mx-1 transition-colors duration-300 ease"
-            >
-              Ingresa
-            </NavLink>
+            <></>
           ) : localStorage.getItem('restaurante') !== 'undefined' ? (
-            <NavLink
-              to="/"
-              onClick={exit}
-              className="text-sm px-4 py-2 leading-none rounded text-white font-semibold border-white border hover:border-transparent hover:text-purple-800 hover:bg-white lg:mt-0 mx-1 transition-colors duration-300 ease"
-            >
-              Salir
-            </NavLink>
+            platesBtn
           ) : (
             <></>
           )}
+        </div>
+        <div className="flex lg:inline-block py-2 lg:py-0">
+          {localStorage.getItem('restaurante') === null
+            ? signInBtn
+            : localStorage.getItem('restaurante') !== 'undefined'
+            ? logOutBtn
+            : signInBtn}
         </div>
       </div>
     </nav>
