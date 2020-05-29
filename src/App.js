@@ -45,7 +45,6 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <NavBar />
       <Switch>
         <NavRoute exact path="/" component={Landing} />
         <Route exact path="/#how-it-works"></Route>

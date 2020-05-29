@@ -1,23 +1,23 @@
-import React from 'react';
-import { isInputNumber } from '../App';
-import axios from 'axios';
-import plate from '../assets/images/plate.svg';
+import React from "react";
+import { isInputNumber } from "../App";
+import plate from "../assets/images/plate.svg";
+import api from "../api/";
 class AddPlate extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      weight: '',
-      calories: '',
-      people: '',
-      price: '',
-      image: '',
-      description: '',
+      name: "",
+      weight: "",
+      calories: "",
+      people: "",
+      price: "",
+      image: "",
+      description: "",
       selectedFile: null,
       loaded: null,
+      loading: false,
     };
   }
-  state;
 
   handleChange = (input) => (e) => {
     this.setState({ [input]: e.target.value });
@@ -28,12 +28,25 @@ class AddPlate extends React.Component {
       loaded: 0,
     });
   };
-  onClickHandler = () => {
-    const data = new FormData();
-    data.append('file', this.state.selectedFile);
-    axios.post('http://localhost:8000/upload', data, {}).then((res) => {
-      console.log(res.statusText);
-    });
+  onClickHandler = async () => {
+    this.setState({ loading: true });
+    let r = await api.addMeal(
+      this.state.selectedFile,
+      localStorage.getItem("restaurante"),
+      this.state.name,
+      this.state.weight,
+      this.state.calories,
+      this.state.people,
+      this.state.price,
+      this.state.description
+    );
+    if (r.error) {
+      console.log("error");
+    } else {
+      console.log("no error");
+    }
+
+    this.setState({ loading: false });
   };
   render() {
     return (
@@ -56,7 +69,7 @@ class AddPlate extends React.Component {
                 type="text"
                 id="name"
                 placeholder="Nombre"
-                onChange={this.handleChange('name')}
+                onChange={this.handleChange("name")}
                 defaultValue={this.state.name}
                 autoComplete="off"
                 required
@@ -70,7 +83,7 @@ class AddPlate extends React.Component {
                 type="text"
                 id="weight"
                 placeholder="Peso"
-                onChange={this.handleChange('weight')}
+                onChange={this.handleChange("weight")}
                 onKeyPress={isInputNumber}
                 defaultValue={this.state.weight}
                 autoComplete="off"
@@ -85,7 +98,7 @@ class AddPlate extends React.Component {
                 type="text"
                 id="calories"
                 placeholder="Calorias"
-                onChange={this.handleChange('calories')}
+                onChange={this.handleChange("calories")}
                 onKeyPress={isInputNumber}
                 defaultValue={this.state.calories}
                 autoComplete="off"
@@ -100,7 +113,7 @@ class AddPlate extends React.Component {
                 type="text"
                 id="people"
                 placeholder="Personas"
-                onChange={this.handleChange('people')}
+                onChange={this.handleChange("people")}
                 onKeyPress={isInputNumber}
                 defaultValue={this.state.people}
                 autoComplete="off"
@@ -115,7 +128,7 @@ class AddPlate extends React.Component {
                 type="text"
                 id="price"
                 placeholder="Precio"
-                onChange={this.handleChange('price')}
+                onChange={this.handleChange("price")}
                 onKeyPress={isInputNumber}
                 defaultValue={this.state.price}
                 autoComplete="off"
@@ -146,7 +159,7 @@ class AddPlate extends React.Component {
                 className="bg-white block w-full border-solid border border-gray-400 rounded-md h-20 p-2 mb-3 placeholder-gray-600"
                 id="description"
                 placeholder="Escriba descripción"
-                onChange={this.handleChange('description')}
+                onChange={this.handleChange("description")}
                 defaultValue={this.state.description}
                 autoComplete="off"
                 required

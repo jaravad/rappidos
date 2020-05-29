@@ -44,7 +44,8 @@ class Api {
       console.log(error);
     }
   }
-  async register(name, category, address, avgTime, phone) {//phone includes +57
+  async register(name, category, address, avgTime, phone) {
+    //phone includes +57
     //listo
     try {
       let requestOptions = {
@@ -56,7 +57,7 @@ class Api {
           category,
           address,
           avgTime,
-          phone
+          phone,
         }),
         headers: { "Content-Type": "application/json" },
       };
@@ -69,6 +70,44 @@ class Api {
     } catch (error) {
       console.log(
         "Esto es un error atrapado en la función register de la clase api: " +
+          error
+      );
+    }
+  }
+  async addMeal(
+    imagen,
+    restaurant,
+    name,
+    weight,
+    calories,
+    people,
+    price,
+    description
+  ) {
+    try {
+      const data = new FormData();
+      data.append("file", imagen);
+      data.append("restaurante", restaurant);
+      data.append("nombre", name);
+      data.append("peso", weight);
+      data.append("calorias", calories);
+      data.append("numPersonas", people);
+      data.append("precio", price);
+      data.append("descripcion", description);
+      const requestOptions = {
+        method: "POST",
+        body: data,
+        redirect: "follow",
+      };
+      let query = await fetch(
+        "http://localhost:8080/api/restaurant/nuevoProducto/",
+        requestOptions
+      );
+      let queryJson = await query.json();
+      return queryJson;
+    } catch (error) {
+      console.log(
+        "Esto es un error atrapado en la función addMeal de la clase api: " +
           error
       );
     }
