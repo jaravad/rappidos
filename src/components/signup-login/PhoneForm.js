@@ -1,8 +1,8 @@
-import React from "react";
-import api from "../../api";
-import { isInputNumber } from "../../App";
+import React from 'react';
+import api from '../../api';
+import { isInputNumber } from '../../App';
 //international phone codes
-const countryTelData = require("country-telephone-data");
+const countryTelData = require('country-telephone-data');
 
 class PhoneForm extends React.Component {
   state = {
@@ -11,7 +11,7 @@ class PhoneForm extends React.Component {
   continue = async (phone) => {
     this.setState({ loading: true });
     let r = await api.pedirCodigo(phone);
-    localStorage.setItem("restaurante", r.body.restaurante);
+    localStorage.setItem('restaurante', r.body.restaurante);
     this.setState({ loading: false });
     this.props.nextStepSpecial(r.body.nuevo);
   };
@@ -20,8 +20,8 @@ class PhoneForm extends React.Component {
     const { values, handleChange } = this.props;
     const options = countryTelData.allCountries.map((country, key) => {
       return (
-        <option value={"+" + country.dialCode} key={key}>
-          {country.name.split(" ")[0]}
+        <option value={'+' + country.dialCode} key={key}>
+          {`${country.name.split(' ')[0]} (+${country.dialCode})`}
         </option>
       );
     });
@@ -47,7 +47,7 @@ class PhoneForm extends React.Component {
               </label>
               <select
                 defaultValue={values.phonecode}
-                onChange={handleChange("phonecode")}
+                onChange={handleChange('phonecode')}
                 className=" bg-white w-full border-solid border border-gray-400 rounded-md h-12 px-2 mb-3"
                 id="countries"
               >
@@ -60,17 +60,18 @@ class PhoneForm extends React.Component {
                 Número de teléfono
               </label>
               <input
-                className="bg-white block w-full border-solid border border-gray-400 rounded-md h-12 px-2 mb-3 placeholder-gray-600"
+                className="bg-white block w-full border-solid border border-gray-400 rounded-md h-12 px-2 mb-3 placeholder-gray-600 tracking-wider"
+                maxLength="10"
                 type="text"
                 id="phone"
                 placeholder="Número de teléfono"
-                onChange={handleChange("phone")}
+                onChange={handleChange('phone')}
                 onKeyPress={isInputNumber}
                 defaultValue={values.phone}
                 autoComplete="off"
                 required
               />
-              <p className="text-xs mb-5">
+              <p className="text-xs mb-5 tracking-wide">
                 Te vamos a confirmar el número por teléfono o mensaje de texto.
                 Sujeto a las tarifas estándar para mensajes y datos.
               </p>

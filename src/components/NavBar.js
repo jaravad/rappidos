@@ -12,6 +12,12 @@ function NavBar() {
       menu.classList.replace('hidden', 'block');
     }
   };
+
+  const exit = () => {
+    toggle();
+    localStorage.clear();
+  };
+
   return (
     <nav className="navbar flex items-center justify-between flex-wrap px-6 py-4 fixed w-full shadow-lg">
       <div className="flex items-center flex-shrink-0 text-white mr-6">
@@ -60,13 +66,25 @@ function NavBar() {
           </NavHashLink>
         </div>
         <div className="flex lg:inline-block py-2 lg:py-0">
-          <NavLink
-            to="/signup-login"
-            onClick={toggle}
-            className="text-sm px-4 py-2 leading-none rounded text-white font-semibold border-white border hover:border-transparent hover:text-purple-800 hover:bg-white lg:mt-0 mx-1 transition-colors duration-300 ease"
-          >
-            Ingresa
-          </NavLink>
+          {localStorage.getItem('restaurante') === null ? (
+            <NavLink
+              to="/signup-login"
+              onClick={toggle}
+              className="text-sm px-4 py-2 leading-none rounded text-white font-semibold border-white border hover:border-transparent hover:text-purple-800 hover:bg-white lg:mt-0 mx-1 transition-colors duration-300 ease"
+            >
+              Ingresa
+            </NavLink>
+          ) : localStorage.getItem('restaurante') !== 'undefined' ? (
+            <NavLink
+              to="/"
+              onClick={exit}
+              className="text-sm px-4 py-2 leading-none rounded text-white font-semibold border-white border hover:border-transparent hover:text-purple-800 hover:bg-white lg:mt-0 mx-1 transition-colors duration-300 ease"
+            >
+              Salir
+            </NavLink>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </nav>
