@@ -2,7 +2,7 @@ import React from "react";
 import Swal from "sweetalert2";
 import api from "../../api";
 function Plate(props) {
-  const deleteMeal = (key) => {
+  const deleteMeal = () => {
     Swal.fire({
       title: "Eliminar plato?",
       text: "No podrás revertir esta acción!",
@@ -12,19 +12,19 @@ function Plate(props) {
       cancelButtonColor: "#d33",
       confirmButtonText: "Cancelar",
       cancelButtonText: "Borrar plato",
-    }).then(async(result) => {
+    }).then(async (result) => {
       if (!result.value) {
-        let r = await api.eliminarPlato(key);
+        let r = await api.eliminarPlato(props.key);
         console.log(r);
         console.log(r.deleted);
-        if(r.deleted){
+        if (r.deleted) {
           Swal.fire("Plato borrado!", "El plato ha sido borrado.", "success");
-        }else{
+        } else {
           Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: '¡Algo salió mal!',
-          })
+            icon: "error",
+            title: "Oops...",
+            text: "¡Algo salió mal!",
+          });
         }
       }
     });
@@ -89,7 +89,7 @@ function Plate(props) {
         </div>
         <button
           className="p-1 rounded flex justify-center items-center absolute plates__delete transition-colors duration-300 ease hover:bg-red-500 text-red-500 hover:text-white"
-          onClick={() => deleteMeal(props.key)}
+          onClick={() => deleteMeal()}
         >
           <span className="material-icons">delete</span>
         </button>
