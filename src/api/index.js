@@ -111,5 +111,25 @@ class Api {
       );
     }
   }
+  async traerPlatos() {
+    try {
+      let id = localStorage.getItem("restaurante");
+      const requestOptions = {
+        method: "GET",
+        redirect: "follow",
+      };
+      let query = await fetch(
+        `${Base_api}api/restaurant/traerProductos/${id}`,
+        requestOptions
+      );
+      let queryJson = await query.json();
+      return queryJson;
+    } catch (error) {
+      console.log(
+        "Esto es un error atrapado en la función traerPlatos de la clase api: " +
+          error
+      );
+    }
+  }
 }
 export default new Api();

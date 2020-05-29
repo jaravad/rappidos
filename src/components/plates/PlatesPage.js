@@ -1,9 +1,19 @@
-import React from 'react';
-import Plate from './Plate';
-import image from '../../assets/images/mittagessen.jpg';
-import chef from '../../assets/images/chef.svg';
-import { Link } from 'react-router-dom';
+import React from "react";
+import Plate from "./Plate";
+import image from "../../assets/images/mittagessen.jpg";
+import chef from "../../assets/images/chef.svg";
+import { Link } from "react-router-dom";
+import api from "../../api";
+
 class PlatesPage extends React.Component {
+  async componentDidMount() {
+    let r = await api.traerPlatos();
+    this.setState({ arreglo: r.body });
+    console.log(this.state.arreglo);
+  }
+  state = {
+    arreglo: [],
+  };
   render() {
     return (
       <div className="fade-anim">
@@ -41,14 +51,22 @@ class PlatesPage extends React.Component {
                 <span className="material-icons mr-3">add_circle_outline</span>
                 <span className="font-semibold">Añadir Plato</span>
               </Link>
-              <h2 className="text-2xl font-bold pl-3">Platos</h2>
+              {this.state.arreglo.length > 0 ? (
+                <h2 className="text-2xl font-bold pl-3">Platos</h2>
+              ) : null}
               <div className="flex flex-wrap">
-                <Plate
-                  title={'Spaguetti'}
-                  p={'Disfrutalo'}
-                  img={image}
-                  key={1}
-                />
+                {this.state.arreglo.length > 0
+                  ? this.state.arreglo.map((meal) => {
+                      return (
+                        <Plate
+                          title={meal.nombre}
+                          p={meal.descripcion}
+                          img={meal.uri}
+                          key={meal._id}
+                        />
+                      );
+                    })
+                  : null}
                 {/* <Plate title={'Spaguetti'} p={'Disfrutalo'} img={image} key={1} />
             <Plate title={'Spaguetti'} p={'Disfrutalo'} img={image} key={1} />
             <Plate title={'Spaguetti'} p={'Disfrutalo'} img={image} key={1} />
