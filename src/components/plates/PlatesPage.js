@@ -44,9 +44,15 @@ class PlatesPage extends React.Component {
               <h2 className="text-2xl font-bold pl-3">Platos</h2>
               <div className="flex flex-wrap">
                 <Plate
-                  title={'Spaguetti'}
-                  p={'Disfrutalo'}
-                  img={image}
+                  name={'Spaguetti'}
+                  description={
+                    'Dignissimos quibusdam quod nemo minima autem qui enim molestias.'
+                  }
+                  calories={'3'}
+                  people={'3'}
+                  weight={'5'}
+                  price={25}
+                  image={image}
                   key={1}
                 />
                 {/* <Plate title={'Spaguetti'} p={'Disfrutalo'} img={image} key={1} />
