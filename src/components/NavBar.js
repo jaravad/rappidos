@@ -49,7 +49,7 @@ function NavBar() {
   );
 
   return (
-    <nav className="navbar flex items-center justify-between flex-wrap px-6 py-4 fixed w-full shadow-lg">
+    <nav className="navbar flex items-center justify-between flex-wrap px-6 py-4 fixed w-full shadow-lg fade-anim">
       <div className="flex items-center flex-shrink-0 text-white mr-6">
         <svg
           className="fill-current h-8 w-8 mr-2"

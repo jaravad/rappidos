@@ -52,7 +52,11 @@ class PlatesPage extends React.Component {
               </Link>
               {this.state.arreglo.length > 0 ? (
                 <h2 className="text-2xl font-bold pl-3">Platos</h2>
-              ) : null}
+              ) : (
+                <h2 className="text-xl pl-3">
+                  Parece que aún no has añadido platos
+                </h2>
+              )}
               <div className="flex flex-wrap">
                 {this.state.arreglo.length > 0
                   ? this.state.arreglo.map((meal) => {
@@ -70,12 +74,6 @@ class PlatesPage extends React.Component {
                       );
                     })
                   : null}
-
-                {/* <Plate title={'Spaguetti'} p={'Disfrutalo'} img={image} key={1} />
-            <Plate title={'Spaguetti'} p={'Disfrutalo'} img={image} key={1} />
-            <Plate title={'Spaguetti'} p={'Disfrutalo'} img={image} key={1} />
-            <Plate title={'Spaguetti'} p={'Disfrutalo'} img={image} key={1} />
-            <Plate title={'Spaguetti'} p={'Disfrutalo'} img={image} key={1} /> */}
               </div>
             </section>
           </div>

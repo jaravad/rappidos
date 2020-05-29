@@ -1,8 +1,26 @@
 import React from 'react';
+import Swal from 'sweetalert2';
 
 function Plate(props) {
+  const deleteMeal = () => {
+    Swal.fire({
+      title: 'Eliminar plato?',
+      text: 'No podrás revertir esta acción!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Cancelar',
+      cancelButtonText: 'Borrar plato',
+    }).then((result) => {
+      if (result.value) {
+        Swal.fire('Plato borrado!', 'El plato ha sido borrado.', 'success');
+      }
+    });
+  };
+
   return (
-    <article className="p-3 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 ">
+    <article className="p-3 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 fade-anim">
       <div className="w-full rounded-md overflow-hidden shadow-md bg-white relative">
         <div className="w-full h-48">
           <img
@@ -57,9 +75,11 @@ function Plate(props) {
             <span className="mr-1 font-semibold">$</span>
             <strong className="pt-1 text-3xl">{`${props.price}`}</strong>
           </span>
-          {/*  */}
         </div>
-        <button className="p-1 rounded flex justify-center items-center absolute plates__delete transition-colors duration-300 ease hover:bg-red-500 text-red-500 hover:text-white">
+        <button
+          className="p-1 rounded flex justify-center items-center absolute plates__delete transition-colors duration-300 ease hover:bg-red-500 text-red-500 hover:text-white"
+          onClick={deleteMeal}
+        >
           <span className="material-icons">delete</span>
         </button>
       </div>
