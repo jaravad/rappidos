@@ -1,9 +1,8 @@
-import React from "react";
-import Plate from "./Plate";
-import image from "../../assets/images/mittagessen.jpg";
-import chef from "../../assets/images/chef.svg";
-import { Link } from "react-router-dom";
-import api from "../../api";
+import React from 'react';
+import Plate from './Plate';
+import chef from '../../assets/images/chef.svg';
+import { Link } from 'react-router-dom';
+import api from '../../api';
 
 class PlatesPage extends React.Component {
   async componentDidMount() {
@@ -60,9 +59,7 @@ class PlatesPage extends React.Component {
                       return (
                         <Plate
                           name={meal.nombre}
-                          description={
-                           meal.descripcion
-                          }
+                          description={meal.descripcion}
                           calories={meal.calorias}
                           people={meal.numPersonas}
                           weight={meal.peso}
