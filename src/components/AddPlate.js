@@ -44,7 +44,7 @@ class AddPlate extends React.Component {
       this.state.description
     );
     if (r.error) {
-      toast("Ocurrió un error, intentalo más tarde.");
+      toast("Ocurrió un error, intentalo más tarde. ");
     } else {
       toast("Se ha agregado el plato exitosamente.");
     }
