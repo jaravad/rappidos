@@ -131,5 +131,24 @@ class Api {
       );
     }
   }
+  async eliminarPlato(idPlato) {
+    try {
+      const requestOptions = {
+        method: "DELETE",
+        redirect: "follow",
+      };
+      let query = await fetch(
+        `${Base_api}api/restaurant/eliminarProducto/${idPlato}`,
+        requestOptions
+      );
+      let queryJson = await query.json();
+      return queryJson;
+    } catch (error) {
+      console.log(
+        "Esto es un error atrapado en la función traerPlatos de la clase api: " +
+          error
+      );
+    }
+  }
 }
 export default new Api();
