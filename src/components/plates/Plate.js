@@ -12,9 +12,9 @@ function Plate(props) {
       cancelButtonColor: "#d33",
       confirmButtonText: "Cancelar",
       cancelButtonText: "Borrar plato",
-    }).then((result) => {
+    }).then(async(result) => {
       if (!result.value) {
-        let r = api.eliminarPlato(key);
+        let r = await api.eliminarPlato(key);
         console.log(r);
         console.log(r.deleted);
         if(r.deleted){
