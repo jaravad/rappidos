@@ -1,9 +1,9 @@
-import React from 'react';
-import api from '../../api';
-import '../../assets/css/myStyles.css';
-import { ToastContainer, toast } from 'react-toastify';
-import { Redirect } from 'react-router-dom';
-import 'react-toastify/dist/ReactToastify.css';
+import React from "react";
+import api from "../../api";
+import "../../assets/css/myStyles.css";
+import { ToastContainer, toast } from "react-toastify";
+import { Redirect } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
 class SignUpInfo extends React.Component {
   state = {
     loading: false,
@@ -12,11 +12,12 @@ class SignUpInfo extends React.Component {
   handleSubmit = async (name, category, address, avgTime, phone) => {
     this.setState({ loading: true });
     let r = await api.register(name, category, address, avgTime, phone);
+    localStorage.setItem("restaurante", r.body.restaurante);
     this.setState({ loading: false });
     if (!r.error) {
       this.setState({ navigate: true });
     } else {
-      toast('¡Ocurrió un error!');
+      toast("¡Ocurrió un error!");
     }
   };
   render() {
@@ -51,7 +52,7 @@ class SignUpInfo extends React.Component {
                 type="text"
                 id="name"
                 placeholder="Nombre"
-                onChange={handleChange('name')}
+                onChange={handleChange("name")}
                 defaultValue={values.name}
                 autoComplete="off"
                 required
@@ -68,7 +69,7 @@ class SignUpInfo extends React.Component {
                 type="text"
                 id="address"
                 placeholder="Dirección"
-                onChange={handleChange('address')}
+                onChange={handleChange("address")}
                 defaultValue={values.address}
                 autoComplete="off"
                 required
@@ -85,7 +86,7 @@ class SignUpInfo extends React.Component {
                 type="text"
                 id="category"
                 placeholder="Categoría"
-                onChange={handleChange('category')}
+                onChange={handleChange("category")}
                 defaultValue={values.category}
                 autoComplete="off"
                 required
@@ -102,7 +103,7 @@ class SignUpInfo extends React.Component {
                 type="text"
                 id="avgTime"
                 placeholder="Tiempo"
-                onChange={handleChange('avgTime')}
+                onChange={handleChange("avgTime")}
                 defaultValue={values.avgTime}
                 autoComplete="off"
                 required
