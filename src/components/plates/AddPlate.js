@@ -52,7 +52,7 @@ class AddPlate extends React.Component {
   };
   render() {
     return (
-      <main className="w-full h-screen bg-pink-100 bg-cover bg-no-repeat bg-bottom flex fade-anim">
+      <main className="w-full min-h-screen bg-pink-100 bg-cover bg-no-repeat bg-bottom flex fade-anim">
         <div className="w-full sm:w-7/12 py-24">
           <ToastContainer />
           <article className="flex flex-col items-start text-gray-800 w-4/5 lg:w-8/12 h-auto rounded border border-solid border-gray-400 shadow p-8 mx-auto">

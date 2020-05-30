@@ -1,27 +1,29 @@
-import React from "react";
-import Swal from "sweetalert2";
-import api from "../../api";
+import React from 'react';
+import Swal from 'sweetalert2';
+import api from '../../api';
+
 function Plate(props) {
   const deleteMeal = () => {
     Swal.fire({
-      title: "Eliminar plato?",
-      text: "No podrás revertir esta acción!",
-      icon: "warning",
+      title: 'Eliminar plato?',
+      text: 'No podrás revertir esta acción!',
+      icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Cancelar",
-      cancelButtonText: "Borrar plato",
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Cancelar',
+      cancelButtonText: 'Borrar plato',
     }).then(async (result) => {
       if (!result.value) {
         let r = await api.eliminarPlato(props.id);
         if (r.body.deleted) {
-          Swal.fire("Plato borrado!", "El plato ha sido borrado.", "success");
+          props.update(props.id);
+          Swal.fire('Plato borrado!', 'El plato ha sido borrado.', 'success');
         } else {
           Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "¡Algo salió mal!",
+            icon: 'error',
+            title: 'Oops...',
+            text: '¡Algo salió mal!',
           });
         }
       }
@@ -35,7 +37,7 @@ function Plate(props) {
           <img
             className="w-full h-full object-cover"
             src={props.image}
-            alt={props.title}
+            alt={props.name}
           />
         </div>
 
@@ -55,7 +57,7 @@ function Plate(props) {
             <span className="pt-1 flex items-center">
               <strong className="text-xl mr-1">{props.calories} </strong>
               <span className="text-xs">{`${
-                parseInt(props.calories) > 1 ? "calorias" : "caloría"
+                parseInt(props.calories) > 1 ? 'calorias' : 'caloría'
               }`}</span>
             </span>
           </span>
@@ -65,7 +67,7 @@ function Plate(props) {
             <span className="pt-1 flex items-center">
               <strong className="text-xl mr-1">{props.people} </strong>
               <span className="text-xs">{`${
-                parseInt(props.people) > 1 ? "personas" : "persona"
+                parseInt(props.people) > 1 ? 'personas' : 'persona'
               }`}</span>
             </span>
           </span>
@@ -75,7 +77,7 @@ function Plate(props) {
             <span className="pt-1 flex items-center">
               <strong className="text-xl mr-1">{props.weight} </strong>
               <span className="text-xs">{`${
-                parseInt(props.weight) > 1 ? "gramos" : "gramo"
+                parseInt(props.weight) > 1 ? 'gramos' : 'gramo'
               }`}</span>
             </span>
           </span>

@@ -12,6 +12,21 @@ class PlatesPage extends React.Component {
   state = {
     arreglo: [],
   };
+
+  updateArray = (id) => {
+    let arr = [];
+    console.log(`prop: ${id}`);
+    for (let i = 0; i < this.state.arreglo.length; i++) {
+      console.log(`state: ${this.state.arreglo[i]._id}`);
+      if (this.state.arreglo[i]._id !== id) {
+        arr.push(this.state.arreglo[i]);
+      }
+    }
+    console.log(arr);
+    this.setState({ arreglo: arr });
+    console.log(this.state.arreglo);
+  };
+
   render() {
     return (
       <div className="fade-anim">
@@ -70,6 +85,7 @@ class PlatesPage extends React.Component {
                           image={meal.uri}
                           id={meal._id}
                           key={meal._id}
+                          update={this.updateArray}
                         />
                       );
                     })
