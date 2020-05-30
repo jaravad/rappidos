@@ -23,7 +23,7 @@ export function isInputNumber(evt) {
 function NavRoute({ exact, path, component: Component }) {
   let auth = localStorage.getItem("restaurante");
   let verification = auth ? true : false;
-  if (path === "/") {
+  if (path === "/" || path === "/signup-login") {
     verification = true;
   }
   console.log(auth);
