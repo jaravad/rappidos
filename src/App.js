@@ -1,12 +1,17 @@
-import React from 'react';
-import NavBar from './components/NavBar';
-import Landing from './components/landing/Landing';
-import SignupLogin from './components/signup-login/SignupLogin';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import PlatesPage from './components/plates/PlatesPage';
-import AddPlate from './components/plates/AddPlate';
-import './assets/css/404error.css';
-import ScrollToTop from './components/ScrollToTop';
+import React from "react";
+import NavBar from "./components/NavBar";
+import Landing from "./components/landing/Landing";
+import SignupLogin from "./components/signup-login/SignupLogin";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+import PlatesPage from "./components/plates/PlatesPage";
+import AddPlate from "./components/plates/AddPlate";
+import "./assets/css/404error.css";
+import ScrollToTop from "./components/ScrollToTop";
 
 export function isInputNumber(evt) {
   const ch = String.fromCharCode(evt.which);
@@ -15,18 +20,30 @@ export function isInputNumber(evt) {
     evt.preventDefault();
   }
 }
-const NavRoute = ({ exact, path, component: Component }) => (
-  <Route
-    exact={exact}
-    path={path}
-    render={(props) => (
-      <div>
-        <NavBar />
-        <Component {...props} />
-      </div>
-    )}
-  />
-);
+function NavRoute({ exact, path, component: Component }) {
+  let auth = localStorage.getItem("restaurante");
+  let verification = auth ? true : false;
+  if (path === "/") {
+    verification = true;
+  }
+  console.log(auth);
+  return (
+    <Route
+      exact={exact}
+      path={path}
+      render={(props) =>
+        verification ? (
+          <div>
+            <NavBar />
+            <Component {...props} />
+          </div>
+        ) : (
+          <Redirect to="/"></Redirect>
+        )
+      }
+    />
+  );
+}
 const Page404 = ({ location }) => (
   <div className="not-found">
     <h1>404 ERROR</h1>
