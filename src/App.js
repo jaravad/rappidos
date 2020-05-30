@@ -26,7 +26,6 @@ function NavRoute({ exact, path, component: Component }) {
   if (path === "/" || path === "/signup-login") {
     verification = true;
   }
-  console.log(auth);
   return (
     <Route
       exact={exact}

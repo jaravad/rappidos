@@ -1,8 +1,8 @@
-import React from 'react';
-import Plate from './Plate';
-import chef from '../../assets/images/chef.svg';
-import { Link } from 'react-router-dom';
-import api from '../../api';
+import React from "react";
+import Plate from "./Plate";
+import chef from "../../assets/images/chef.svg";
+import { Link } from "react-router-dom";
+import api from "../../api";
 
 class PlatesPage extends React.Component {
   async componentDidMount() {
@@ -15,16 +15,12 @@ class PlatesPage extends React.Component {
 
   updateArray = (id) => {
     let arr = [];
-    console.log(`prop: ${id}`);
     for (let i = 0; i < this.state.arreglo.length; i++) {
-      console.log(`state: ${this.state.arreglo[i]._id}`);
       if (this.state.arreglo[i]._id !== id) {
         arr.push(this.state.arreglo[i]);
       }
     }
-    console.log(arr);
     this.setState({ arreglo: arr });
-    console.log(this.state.arreglo);
   };
 
   render() {
@@ -81,7 +77,7 @@ class PlatesPage extends React.Component {
                           calories={meal.calorias}
                           people={meal.numPersonas}
                           weight={meal.peso}
-                          price={meal.peso}
+                          price={meal.precio}
                           image={meal.uri}
                           id={meal._id}
                           key={meal._id}
