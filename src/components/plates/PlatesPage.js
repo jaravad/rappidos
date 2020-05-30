@@ -3,6 +3,7 @@ import Plate from './Plate';
 import chef from '../../assets/images/chef.svg';
 import { Link } from 'react-router-dom';
 import api from '../../api';
+import { HashLink } from 'react-router-hash-link';
 
 class PlatesPage extends React.Component {
   async componentDidMount() {
@@ -45,6 +46,15 @@ class PlatesPage extends React.Component {
                       satisfacer a tus clientes a través de una agradable
                       experiencia de delivery.
                     </p>
+                    <HashLink
+                      to="/#how-it-works"
+                      className="start-btn font-semibold text-gray-900 mt-3 inline-block flex items-center"
+                    >
+                      <span className="mr-1 underline">
+                        Como funciona RAPPIdos?
+                      </span>
+                      <span className="material-icons">arrow_right_alt</span>
+                    </HashLink>
                   </div>
                 </div>
                 <div className="w-full md:w-1/2 flex justify-center items-center">

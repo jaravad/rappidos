@@ -34,6 +34,13 @@ body {
   background-color: darken($color: $color-5, $amount: 10%);
 }
 
+.start-btn span:nth-of-type(2) {
+  transition: transform 0.3s ease;
+}
+.start-btn:hover span:nth-of-type(2) {
+  transform: translateX(0.5em);
+}
+
 .carousel__card {
   min-height: 25em;
 }

@@ -22,7 +22,7 @@ function NavBar() {
     <NavLink
       to="/signup-login"
       onClick={toggle}
-      className="text-sm px-4 py-2 leading-none rounded text-white font-semibold border-white border hover:border-transparent hover:text-purple-800 hover:bg-white lg:mt-0 mx-1 transition-colors duration-300 ease"
+      className="text-sm px-4 py-2 leading-none rounded text-white font-bold border-white border-2 hover:border-transparent hover:text-purple-800 hover:bg-white lg:mt-0 mx-1 transition-colors duration-300 ease"
     >
       Ingresa
     </NavLink>
@@ -32,20 +32,32 @@ function NavBar() {
     <NavLink
       to="/"
       onClick={exit}
-      className="text-sm px-4 py-2 leading-none rounded text-white font-semibold border-white border hover:border-transparent hover:text-purple-800 hover:bg-white lg:mt-0 mx-1 transition-colors duration-300 ease"
+      className="text-sm px-4 py-2 leading-none rounded text-white font-bold border-white border-2 hover:border-transparent hover:text-purple-800 hover:bg-white lg:mt-0 mx-1 transition-colors duration-300 ease"
     >
       Salir
     </NavLink>
   );
 
-  const platesBtn = (
+  const ourService = (
     <NavHashLink
-      to="/platos"
+      to="/#about-us"
       onClick={toggle}
       className="nav-btn rounded mt-4 px-4 py-3 text-white hover:text-white font-semibold mx-1 rounded transition-colors duration-300 ease-in-out"
     >
-      Mis Platos
+      Nuestro servicio
     </NavHashLink>
+  );
+
+  const platesBtn = (
+    <>
+      <NavLink
+        to="/platos"
+        onClick={toggle}
+        className="nav-btn rounded mt-4 px-4 py-3 text-white hover:text-white font-semibold mx-1 rounded transition-colors duration-300 ease-in-out"
+      >
+        Mis Platos
+      </NavLink>
+    </>
   );
 
   return (
@@ -94,14 +106,11 @@ function NavBar() {
           >
             Como funciona
           </NavHashLink>
-
-          {localStorage.getItem('restaurante') === null ? (
-            <></>
-          ) : localStorage.getItem('restaurante') !== 'undefined' ? (
-            platesBtn
-          ) : (
-            <></>
-          )}
+          {localStorage.getItem('restaurante') === null
+            ? ourService
+            : localStorage.getItem('restaurante') !== 'undefined'
+            ? platesBtn
+            : ourService}
         </div>
         <div className="flex lg:inline-block py-2 lg:py-0">
           {localStorage.getItem('restaurante') === null

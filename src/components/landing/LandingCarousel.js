@@ -40,9 +40,9 @@ function LandingCarousel() {
   });
 
   return (
-    <section className="w-full bg-pink-100" id="how-it-works">
+    <section className="w-full bg-pink-100" id="about-us">
       <Carousel
-        className="w-11/12 md:w-4/5 mx-auto py-8"
+        className="w-11/12 md:w-4/5 mx-auto py-24"
         centered
         infinite
         arrows

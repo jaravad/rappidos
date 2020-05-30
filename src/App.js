@@ -1,17 +1,17 @@
-import React from "react";
-import NavBar from "./components/NavBar";
-import Landing from "./components/landing/Landing";
-import SignupLogin from "./components/signup-login/SignupLogin";
+import React from 'react';
+import NavBar from './components/NavBar';
+import Landing from './components/landing/Landing';
+import SignupLogin from './components/signup-login/SignupLogin';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
-} from "react-router-dom";
-import PlatesPage from "./components/plates/PlatesPage";
-import AddPlate from "./components/plates/AddPlate";
-import "./assets/css/404error.css";
-import ScrollToTop from "./components/ScrollToTop";
+} from 'react-router-dom';
+import PlatesPage from './components/plates/PlatesPage';
+import AddPlate from './components/plates/AddPlate';
+import './assets/css/404error.css';
+import ScrollToTop from './components/ScrollToTop';
 
 export function isInputNumber(evt) {
   const ch = String.fromCharCode(evt.which);
@@ -21,12 +21,12 @@ export function isInputNumber(evt) {
   }
 }
 function NavRoute({ exact, path, component: Component }) {
-  let auth = localStorage.getItem("restaurante");
+  let auth = localStorage.getItem('restaurante');
   let verification = auth ? true : false;
-  if (path === "/" || path === "/signup-login") {
+  if (path === '/' || path === '/signup-login') {
     verification = true;
   }
-  console.log(auth);
+
   return (
     <Route
       exact={exact}
@@ -65,6 +65,7 @@ function App() {
       <Switch>
         <NavRoute exact path="/" component={Landing} />
         <Route exact path="/#how-it-works"></Route>
+        <Route exact path="/#about-us"></Route>
         <NavRoute exact path="/signup-login" component={SignupLogin} />
         <NavRoute exact path="/platos" component={PlatesPage} />
         <NavRoute exact path="/plato" component={AddPlate} />

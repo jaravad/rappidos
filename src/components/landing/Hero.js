@@ -1,5 +1,6 @@
 import React from 'react';
 import heroImg from '../../assets/images/hero.svg';
+import { Link } from 'react-router-dom';
 
 function Hero() {
   return (
@@ -21,6 +22,13 @@ function Hero() {
               Únete hoy a nuestra comunidad de restaurantes. Ayudarte a crecer
               como empresa es uno de nuestro principales objetivos.
             </p>
+            <Link
+              to="/signup-login"
+              className="start-btn px-4 py-2 bg-purple-900 border-solid border-2 border-purple-900 text-white rounded-lg mt-5 font-bold inline-flex items-center hover:text-purple-900 hover:bg-transparent transition-colors duration-300 self-start"
+            >
+              <span className="">Comienza</span>
+              <span className="material-icons">chevron_right</span>
+            </Link>
           </div>
         </div>
       </main>

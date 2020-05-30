@@ -23,6 +23,18 @@ body {
   background-color: #331a36;
 }
 
+.start-btn span:nth-of-type(2) {
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.start-btn:hover span:nth-of-type(2) {
+  -webkit-transform: translateX(0.5em);
+          transform: translateX(0.5em);
+}
+
 .carousel__card {
   min-height: 25em;
 }
